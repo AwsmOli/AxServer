@@ -10,7 +10,9 @@ import com.google.gson.JsonSyntaxException;
 import com.skoky.P3tools.data.msg.PassingGeneric;
 import com.skoky.P98tools.data.msg.Passing;
 import com.skoky.raspi.Converter;
+import com.sun.org.apache.xpath.internal.SourceTree;
 import eu.isawsm.accelerate.server.model.*;
+import junit.framework.Test;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
 
@@ -31,6 +33,17 @@ public class AxServer {
    private Set<IDriver> drivers;
 
     public  void start(String[] args){
+        System.out.println("AxServer args:");
+        for(String s : args){
+            System.out.println(s);
+
+            switch (s.toLowerCase()){
+                case "-generatetestdata":
+                    test();
+                    break;
+            }
+        }
+
         //Init DecoderLib
         new Converter(args);
 
@@ -78,34 +91,45 @@ public class AxServer {
         client.connect();
     }
 
+    private void test(){
+        long time = 0;
+        while(true){
+            time += (Math.random() * 20000);
+
+            processLaps(time, 1337);
+            try {
+                Thread.sleep(1000l);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public AxServer() throws ConfigurationException {
         club = new AxProperties().club;
         Configuration config = new Configuration();
-    //    config.setHostname("192.168.1.5");
         config.setPort(1337);
-      //  config.setAllowCustomRequests(true);
-
-       // config.setContext("/socket.io");
 
        final SocketIOServer server = new SocketIOServer(config);
 
-        server.addEventListener("registerDriver", IDriver.class, (socketIOClient, driver, ackRequest) -> {
-            drivers.add(driver);
-            System.out.println("Driver registered: " + driver.getName());
-            for (ICar car : driver.getCars()){
-                System.out.println(" -" + car.getName());
+        server.addEventListener("registerDriver", Object.class, new DataListener<Object>() {
+            @Override
+            public void onData(SocketIOClient socketIOClient, Object iDriver, AckRequest ackRequest) throws Exception {
+                drivers.add((IDriver) iDriver);
+                System.out.println("Driver registered: " + ((IDriver) iDriver).getName());
+                for (ICar car :((IDriver) iDriver).getCars()){
+                    System.out.println(" -" + car.getName());
+                }
             }
         });
 
         server.addEventListener("TestConnection", String.class, new DataListener<String>() {
-                    @Override
-                    public void onData(SocketIOClient socketIOClient, String s, AckRequest ackRequest) {
-
-                        System.out.println("Client connected: " + socketIOClient.getRemoteAddress() + " " + s + " " + ackRequest.toString());
-
-                        socketIOClient.sendEvent("Welcome", club);
-                    }
-                });
+            @Override
+            public void onData(SocketIOClient socketIOClient, String s, AckRequest ackRequest) {
+                System.out.println("Client connected: " + socketIOClient.getRemoteAddress() + " " + s + " " + ackRequest.toString());
+                socketIOClient.sendEvent("Welcome", club);
+            }
+        });
 
 
         server.addConnectListener(socketIOClient -> {
@@ -155,8 +179,10 @@ public class AxServer {
                 startTime = endTime;
                 return;
             }
+            System.out.println("OUT:  LapCompleted:" + id + " Time: " + (endTime - startTime));
             mServer.getBroadcastOperations()
                     .sendEvent("LapCompleted:" + id, new Lap(endTime - startTime, club.getTracks().get(0).getCourse()));
+            startTime = endTime;
         }
 
         @Override
