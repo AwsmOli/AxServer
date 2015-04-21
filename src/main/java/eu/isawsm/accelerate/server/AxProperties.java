@@ -40,8 +40,8 @@ public class AxProperties {
             long minTime = Long.parseLong(prop.getProperty("MinTime"));
             long maxTime = Long.parseLong(prop.getProperty("MaxTime"));
 
-            ICourse course = new Course(condition, courseName, reverse, minTime, maxTime);
-            ITrack track = new Track(trackType,course);
+            Course course = new Course(condition, courseName, reverse, minTime, maxTime);
+            Track track = new Track(trackType,course);
             club = new Club(clubname,clubURI,null, Arrays.asList(track));
 
         } catch (IOException io) {

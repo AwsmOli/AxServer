@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_axserver" default="compile.module.axserver">
+  <dirname property="module.axserver.basedir" file="${ant.file.module_axserver}"/>
+  
+  <property name="module.jdk.home.axserver" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.axserver" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.axserver" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.axserver" value="-encoding UTF-8 -source 8 ${compiler.args}"/>
+  
+  <property name="axserver.output.dir" value="${module.axserver.basedir}/target/classes"/>
+  <property name="axserver.testoutput.dir" value="${module.axserver.basedir}/target/test-classes"/>
+  
+  <path id="axserver.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="axserver.module.production.classpath">
+    <path refid="${module.jdk.classpath.axserver}"/>
+    <path refid="library.converter.classpath"/>
+    <path refid="library.android.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.com.google.code.gson:gson:2.3.1.classpath"/>
+    <path refid="library.maven:_com.corundumstudio.socketio:netty-socketio:1.7.6.classpath"/>
+    <path refid="library.maven:_io.netty:netty-buffer:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-common:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-handler:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-codec-http:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-codec:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-epoll:4.0.25.final.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.7.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.0.classpath"/>
+    <path refid="library.maven:_com.github.nkzawa:socket.io-client:0.4.2.classpath"/>
+    <path refid="library.maven:_com.github.nkzawa:engine.io-client:0.4.1.classpath"/>
+    <path refid="library.maven:_org.java-websocket:java-websocket:1.3.0.classpath"/>
+    <path refid="library.maven:_org.json:json:20090211.classpath"/>
+    <path refid="library.maven:_org.jboss.netty:netty:3.2.10.final.classpath"/>
+  </path>
+  
+  <path id="axserver.runtime.production.module.classpath">
+    <pathelement location="${axserver.output.dir}"/>
+    <path refid="library.converter.classpath"/>
+    <path refid="library.android.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.com.google.code.gson:gson:2.3.1.classpath"/>
+    <path refid="library.maven:_com.corundumstudio.socketio:netty-socketio:1.7.6.classpath"/>
+    <path refid="library.maven:_io.netty:netty-buffer:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-common:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-handler:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-codec-http:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-codec:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-epoll:4.0.25.final.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.7.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.0.classpath"/>
+    <path refid="library.maven:_com.github.nkzawa:socket.io-client:0.4.2.classpath"/>
+    <path refid="library.maven:_com.github.nkzawa:engine.io-client:0.4.1.classpath"/>
+    <path refid="library.maven:_org.java-websocket:java-websocket:1.3.0.classpath"/>
+    <path refid="library.maven:_org.json:json:20090211.classpath"/>
+    <path refid="library.maven:_org.jboss.netty:netty:3.2.10.final.classpath"/>
+  </path>
+  
+  <path id="axserver.module.classpath">
+    <path refid="${module.jdk.classpath.axserver}"/>
+    <pathelement location="${axserver.output.dir}"/>
+    <path refid="library.converter.classpath"/>
+    <path refid="library.android.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.com.google.code.gson:gson:2.3.1.classpath"/>
+    <path refid="library.maven:_junit:junit:3.8.1.classpath"/>
+    <path refid="library.maven:_com.corundumstudio.socketio:netty-socketio:1.7.6.classpath"/>
+    <path refid="library.maven:_io.netty:netty-buffer:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-common:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-handler:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-codec-http:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-codec:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-epoll:4.0.25.final.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.7.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.0.classpath"/>
+    <path refid="library.maven:_com.github.nkzawa:socket.io-client:0.4.2.classpath"/>
+    <path refid="library.maven:_com.github.nkzawa:engine.io-client:0.4.1.classpath"/>
+    <path refid="library.maven:_org.java-websocket:java-websocket:1.3.0.classpath"/>
+    <path refid="library.maven:_org.json:json:20090211.classpath"/>
+    <path refid="library.maven:_org.jboss.netty:netty:3.2.10.final.classpath"/>
+  </path>
+  
+  <path id="axserver.runtime.module.classpath">
+    <pathelement location="${axserver.testoutput.dir}"/>
+    <pathelement location="${axserver.output.dir}"/>
+    <path refid="library.converter.classpath"/>
+    <path refid="library.android.classpath"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.com.google.code.gson:gson:2.3.1.classpath"/>
+    <path refid="library.maven:_junit:junit:3.8.1.classpath"/>
+    <path refid="library.maven:_com.corundumstudio.socketio:netty-socketio:1.7.6.classpath"/>
+    <path refid="library.maven:_io.netty:netty-buffer:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-common:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-handler:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-codec-http:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-codec:4.0.25.final.classpath"/>
+    <path refid="library.maven:_io.netty:netty-transport-native-epoll:4.0.25.final.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.7.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.3.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.0.classpath"/>
+    <path refid="library.maven:_com.github.nkzawa:socket.io-client:0.4.2.classpath"/>
+    <path refid="library.maven:_com.github.nkzawa:engine.io-client:0.4.1.classpath"/>
+    <path refid="library.maven:_org.java-websocket:java-websocket:1.3.0.classpath"/>
+    <path refid="library.maven:_org.json:json:20090211.classpath"/>
+    <path refid="library.maven:_org.jboss.netty:netty:3.2.10.final.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.axserver">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.axserver">
+    <patternset refid="excluded.from.module.axserver"/>
+  </patternset>
+  
+  <path id="axserver.module.sourcepath">
+    <dirset dir="${module.axserver.basedir}">
+      <include name="lib"/>
+      <include name="src/main/java"/>
+    </dirset>
+  </path>
+  
+  <path id="axserver.module.test.sourcepath">
+    <dirset dir="${module.axserver.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.axserver" depends="compile.module.axserver.production,compile.module.axserver.tests" description="Compile module AxServer"/>
+  
+  <target name="compile.module.axserver.production" depends="register.custom.compilers" description="Compile module AxServer; production classes">
+    <mkdir dir="${axserver.output.dir}"/>
+    <javac2 destdir="${axserver.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.axserver}/javac">
+      <compilerarg line="${compiler.args.axserver}"/>
+      <bootclasspath refid="axserver.module.bootclasspath"/>
+      <classpath refid="axserver.module.production.classpath"/>
+      <src refid="axserver.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.axserver"/>
+    </javac2>
+    
+    <copy todir="${axserver.output.dir}">
+      <fileset dir="${module.axserver.basedir}/lib">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.axserver.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.axserver.tests" depends="register.custom.compilers,compile.module.axserver.production" description="compile module AxServer; test classes" unless="skip.tests">
+    <mkdir dir="${axserver.testoutput.dir}"/>
+    <javac2 destdir="${axserver.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.axserver}/javac">
+      <compilerarg line="${compiler.args.axserver}"/>
+      <bootclasspath refid="axserver.module.bootclasspath"/>
+      <classpath refid="axserver.module.classpath"/>
+      <src refid="axserver.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.axserver"/>
+    </javac2>
+    
+    <copy todir="${axserver.testoutput.dir}">
+      <fileset dir="${module.axserver.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.axserver" description="cleanup module">
+    <delete dir="${axserver.output.dir}"/>
+    <delete dir="${axserver.testoutput.dir}"/>
+  </target>
+</project>

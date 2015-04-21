@@ -98,7 +98,7 @@ public class AxServer {
 
             processLaps(time, 1337);
             try {
-                Thread.sleep(1000l);
+                Thread.sleep(5000l);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
