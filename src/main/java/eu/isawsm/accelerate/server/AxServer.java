@@ -6,6 +6,7 @@ import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.SocketIOServer;
 import com.corundumstudio.socketio.listener.DataListener;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import com.skoky.P3tools.data.msg.PassingGeneric;
 import com.skoky.P98tools.data.msg.Passing;
@@ -15,6 +16,8 @@ import eu.isawsm.accelerate.server.model.*;
 import junit.framework.Test;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import javax.naming.ConfigurationException;
 import java.net.URI;
@@ -60,22 +63,19 @@ public class AxServer {
             public void onMessage(String s) {
                 System.out.println("In: " + s);
                 if(s.endsWith("RaspiTimingBox connected")) return;
-
+                if(!s.contains("passingNumber")) return;
                 long time;
                 int transponderID;
 
                 try {
-                    PassingGeneric passing = gson.fromJson(s, PassingGeneric.class);
-                    time = passing.getRtcTime()/1000;
-                    transponderID = passing.getTransponder();
+                    JSONObject jsonObject = new JSONObject(s);
+                    transponderID = (int) jsonObject.get("transponder");
+                    time = (long) jsonObject.get("RTC_Time");
 
-                } catch (JsonSyntaxException e) {
-                    Passing passing = gson.fromJson(s, Passing.class);
-                    time = Long.parseLong(passing.getTimeSecs())*1000;
-                    transponderID = Integer.parseInt(passing.getTransponder());
+                    processLaps(time, transponderID);
+                } catch (JSONException e) {
+                    System.out.println(e.getMessage());
                 }
-
-                processLaps(time, transponderID);
             }
 
             @Override
@@ -89,6 +89,10 @@ public class AxServer {
             }
         };
         client.connect();
+
+        client.onMessage( "{\"passingNumber\":17,\"transponder\":4683575,\"RTC_Time\":2842824000,\"strength\":69," +
+                "\"hits\":108,\"flags\":0,\"recordType\":\"Passing\",\"TOR\":1,\"FLAGS\":0,\"CRC\":13112," +
+                "\"crcOk\":true,\"unknownFields\":{},\"VERSION\":1,\"decoderId\":\"131668\"}");
     }
 
     private void test(){
