@@ -48,7 +48,7 @@ public class AxServer {
         }
 
         //Init DecoderLib
-        new Converter(args);
+        startConverter(args);
 
         WebSocketClient client = new WebSocketClient(URI.create("ws://127.0.0.1:8080/websocket")) {
 
@@ -61,16 +61,17 @@ public class AxServer {
 
             @Override
             public void onMessage(String s) {
-                System.out.println("In: " + s);
+
                 if(s.endsWith("RaspiTimingBox connected")) return;
                 if(!s.contains("passingNumber")) return;
+                System.out.println("In: " + s);
                 long time;
                 int transponderID;
 
                 try {
                     JSONObject jsonObject = new JSONObject(s);
-                    transponderID = (int) jsonObject.get("transponder");
-                    time = (long) jsonObject.get("RTC_Time");
+                    transponderID = Integer.parseInt(jsonObject.get("transponder").toString(), 16);
+                    time = Long.parseLong(jsonObject.get("RTC_Time").toString(),16)/1000;
 
                     processLaps(time, transponderID);
                 } catch (JSONException e) {
@@ -90,9 +91,17 @@ public class AxServer {
         };
         client.connect();
 
-        client.onMessage( "{\"passingNumber\":17,\"transponder\":4683575,\"RTC_Time\":2842824000,\"strength\":69," +
-                "\"hits\":108,\"flags\":0,\"recordType\":\"Passing\",\"TOR\":1,\"FLAGS\":0,\"CRC\":13112," +
-                "\"crcOk\":true,\"unknownFields\":{},\"VERSION\":1,\"decoderId\":\"131668\"}");
+
+    }
+
+    private void startConverter(String... args){
+        try {
+            new Converter(args);
+        } catch (NullPointerException e){
+            //seems to be some bug inside the ConverterLib
+            System.out.println("Null in Converter, restarting!");
+            startConverter(args);
+        }
     }
 
     private void test(){
