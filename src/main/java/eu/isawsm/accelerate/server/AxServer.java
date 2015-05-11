@@ -35,6 +35,8 @@ public class AxServer {
    private IClub club;
    private Set<IDriver> drivers;
 
+    private boolean verbose = false;
+
     public  void start(String[] args){
         System.out.println("AxServer args:");
         for(String s : args){
@@ -43,6 +45,10 @@ public class AxServer {
             switch (s.toLowerCase()){
                 case "-generatetestdata":
                     test();
+                    break;
+                case "-v":
+                case "-verbose":
+                    verbose = true;
                     break;
             }
         }
@@ -64,7 +70,7 @@ public class AxServer {
 
                 if(s.endsWith("RaspiTimingBox connected")) return;
                 if(!s.contains("passingNumber")) return;
-                System.out.println("In: " + s);
+                if(verbose) System.out.println("In: " + s);
                 long time;
                 int transponderID;
 
@@ -107,7 +113,7 @@ public class AxServer {
     private void test(){
         long time = 0;
         while(true){
-            time += (Math.random() * 20000);
+            time += (Math.random() * 200000);
 
             processLaps(time, 1337);
             try {
