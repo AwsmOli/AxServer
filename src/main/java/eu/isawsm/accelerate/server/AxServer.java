@@ -113,7 +113,7 @@ public class AxServer {
     private void test(){
         long time = 0;
         while(true){
-            time += (Math.random() * 200000);
+            time += (Math.random() * 20000);
 
             processLaps(time, 1337);
             try {
