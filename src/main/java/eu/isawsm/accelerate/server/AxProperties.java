@@ -1,6 +1,8 @@
 package eu.isawsm.accelerate.server;
 
-import eu.isawsm.accelerate.server.model.*;
+import Shared.Club;
+import Shared.Course;
+import Shared.Track;
 
 import javax.naming.ConfigurationException;
 import java.io.*;

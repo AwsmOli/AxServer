@@ -1,19 +1,17 @@
 package eu.isawsm.accelerate.server;
 
+import Shared.Car;
+import Shared.Club;
+import Shared.Driver;
+import Shared.Lap;
 import com.corundumstudio.socketio.AckRequest;
 import com.corundumstudio.socketio.Configuration;
 import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.SocketIOServer;
+import com.corundumstudio.socketio.listener.ConnectListener;
 import com.corundumstudio.socketio.listener.DataListener;
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonSyntaxException;
-import com.skoky.P3tools.data.msg.PassingGeneric;
-import com.skoky.P98tools.data.msg.Passing;
 import com.skoky.raspi.Converter;
-import com.sun.org.apache.xpath.internal.SourceTree;
-import eu.isawsm.accelerate.server.model.*;
-import junit.framework.Test;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
 import org.json.JSONException;
@@ -22,7 +20,6 @@ import org.json.JSONObject;
 import javax.naming.ConfigurationException;
 import java.net.URI;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Set;
 
 
@@ -32,8 +29,8 @@ import java.util.Set;
 public class AxServer {
 
    private SocketIOServer mServer;
-   private IClub club;
-   private Set<IDriver> drivers;
+   private Club club;
+   private Set<Driver> drivers;
 
     private boolean verbose = false;
 
@@ -131,12 +128,12 @@ public class AxServer {
 
        final SocketIOServer server = new SocketIOServer(config);
 
-        server.addEventListener("registerDriver", Object.class, new DataListener<Object>() {
+        server.addEventListener("registerDriver", Driver.class, new DataListener<Driver>() {
             @Override
-            public void onData(SocketIOClient socketIOClient, Object iDriver, AckRequest ackRequest) throws Exception {
-                drivers.add((IDriver) iDriver);
-                System.out.println("Driver registered: " + ((IDriver) iDriver).getName());
-                for (ICar car :((IDriver) iDriver).getCars()){
+            public void onData(SocketIOClient socketIOClient, Driver driver, AckRequest ackRequest) throws Exception {
+                drivers.add(driver);
+                System.out.println("Driver registered: " + driver.getName());
+                for (Car car :driver.getCars()){
                     System.out.println(" -" + car.getName());
                 }
             }
@@ -144,18 +141,21 @@ public class AxServer {
 
         server.addEventListener("TestConnection", String.class, new DataListener<String>() {
             @Override
-            public void onData(SocketIOClient socketIOClient, String s, AckRequest ackRequest) {
+            public void onData(SocketIOClient socketIOClient, String s, AckRequest ackRequest) throws Exception {
                 System.out.println("Client connected: " + socketIOClient.getRemoteAddress() + " " + s + " " + ackRequest.toString());
                 socketIOClient.sendEvent("Welcome", club);
             }
         });
 
+        server.addConnectListener(new ConnectListener() {
+            @Override
+            public void onConnect(SocketIOClient socketIOClient) {
+                System.out.println("Client connected: " + socketIOClient.getRemoteAddress());
 
-        server.addConnectListener(socketIOClient -> {
-            System.out.println("Client connected: " + socketIOClient.getRemoteAddress());
-
-            socketIOClient.sendEvent("Welcome", club);
+                socketIOClient.sendEvent("Welcome", club);
+            }
         });
+
 
         server.start();
         mServer = server;
@@ -200,7 +200,7 @@ public class AxServer {
             }
             System.out.println("OUT:  LapCompleted:" + id + " Time: " + (endTime - startTime));
             mServer.getBroadcastOperations()
-                    .sendEvent("LapCompleted:" + id, new Lap(endTime - startTime, club.getTracks().get(0).getCourse()));
+                    .sendEvent("LapCompleted:" + id, new Gson().toJson(new Lap(endTime - startTime, club.getTracks().get(0).getCourse())));
             startTime = endTime;
         }
 
