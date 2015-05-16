@@ -72,17 +72,27 @@ public class Car {
     }
 
     public double getAvgTime(Course course) {
+        return getAvgTime(course, 0);
+    }
+
+    public double getAvgTime(Course course, int count) {
+        ArrayList<Lap> Laps = count==0 ? getLapsCopy(): getLapsCopy(200);
+
         if (Laps.isEmpty()) return 0.0;
 
         long sum = 0;
         for (Lap l : Laps) {
             if(l.getCourse().equals(course))
-              sum += l.getTime();
+                sum += l.getTime();
         }
         return sum / Laps.size();
     }
 
     public double getBestTime(Course course) {
+        ArrayList<Lap> Laps = getLapsCopy();
+
+
+
         if (Laps.isEmpty()) return 0;
         long bestTime = Laps.get(0).getTime();
 
@@ -97,6 +107,7 @@ public class Car {
     }
 
     public int getLapCount(Course course) {
+        ArrayList<Lap> Laps = getLapsCopy();
 
         int retVal = 0;
 
@@ -108,7 +119,15 @@ public class Car {
     }
 
     public double getConsistency(Course course) {
+        return getConsistency(course,0);
+    }
+
+    public double getConsistency(Course course, int count) {
+
         if (getLapCount(course) < MINLAPS) return -1;
+
+        ArrayList<Lap> Laps = count==0 ? getLapsCopy(): getLapsCopy(200);
+
         double[] times = new double[Laps.size()];
         int i = 0;
         for (Lap l : Laps) {
@@ -158,6 +177,17 @@ public class Car {
         retVal += getModel().getManufacturer().getName();
         retVal += " "+getModel().getName();
         return retVal.trim();
+    }
+
+    private ArrayList<Lap> getLapsCopy (){
+        return new ArrayList<>(Laps);
+    }
+
+    private ArrayList<Lap> getLapsCopy (int count){
+        if(Laps.size() > count){
+            return new ArrayList<>(Laps.subList(Laps.size()-count-1,Laps.size()-1));
+        }
+        return getLapsCopy();
     }
 
     public boolean equals(Object o) {

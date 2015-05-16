@@ -110,11 +110,16 @@ public class AxServer {
     private void test(){
         long time = 0;
         while(true){
-            time += (Math.random() * 20000);
+            time += (Math.random()*2000 + 18000);
+
+            if(Math.random()*10 > 9){
+                time+= 5000;
+
+            }
 
             processLaps(time, 1337);
             try {
-                Thread.sleep(5000l);
+                Thread.sleep(1500l);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
