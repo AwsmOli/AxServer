@@ -2,5 +2,11 @@
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lib/controlsfx-8.40.9.jar" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/avg.png" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/down.png" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/star.png" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/up.png" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/warn.png" charset="windows-1252" />
   </component>
 </project>

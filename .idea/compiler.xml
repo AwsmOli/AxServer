@@ -26,5 +26,8 @@
         <module name="AxServer" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="AxServer" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,26 +1,25 @@
 package eu.isawsm.accelerate.server;
 
 import Shared.Car;
-import Shared.Club;
 import Shared.Driver;
 import Shared.Lap;
-import com.corundumstudio.socketio.AckRequest;
 import com.corundumstudio.socketio.Configuration;
-import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.SocketIOServer;
-import com.corundumstudio.socketio.listener.ConnectListener;
-import com.corundumstudio.socketio.listener.DataListener;
 import com.google.gson.Gson;
-import com.skoky.raspi.Converter;
-import org.java_websocket.client.WebSocketClient;
-import org.java_websocket.handshake.ServerHandshake;
+import com.sun.javafx.collections.ObservableListWrapper;
+import com.sun.xml.internal.ws.api.databinding.MappingInfo;
+import eu.isawsm.accelerate.server.Readers.SerialReader;
+import eu.isawsm.accelerate.server.UI.MainForm;
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.json.JSONException;
-import org.json.JSONObject;
 
-import javax.naming.ConfigurationException;
-import java.net.URI;
+import javax.jmdns.JmmDNS;
+import javax.jmdns.ServiceInfo;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Set;
+import java.util.Date;
 
 
 /**
@@ -28,193 +27,158 @@ import java.util.Set;
  */
 public class AxServer {
 
-   private SocketIOServer mServer;
-   private Club club;
-   private Set<Driver> drivers;
+    private AxProperties axProperties;
+    private MainForm mainForm;
+    private SocketIOServer mServer;
 
-    private boolean verbose = false;
+    private static final ObservableList<Car> cars = FXCollections.observableArrayList();
 
-    public  void start(String[] args){
-        System.out.println("AxServer args:");
-        for(String s : args){
-            System.out.println(s);
+    private JmmDNS jmdns = JmmDNS.Factory.getInstance();
 
-            switch (s.toLowerCase()){
-                case "-generatetestdata":
-                    test();
-                    break;
-                case "-v":
-                case "-verbose":
-                    verbose = true;
-                    break;
-            }
-        }
+    public AxServer(AxProperties axProperties, MainForm mainForm) {
+        this.axProperties = axProperties;
+        this.mainForm = mainForm;
 
-        //Init DecoderLib
-        startConverter(args);
+        mainForm.setCars(cars);
 
-        WebSocketClient client = new WebSocketClient(URI.create("ws://127.0.0.1:8080/websocket")) {
+        new Thread(() -> {
+            startSocketServer();
+            startSerialReader();
+            initZeroNetConf();
+        }).start();
 
-            Gson gson = new Gson();
-            @Override
-            public void onOpen(ServerHandshake serverHandshake) {
-                System.out.println("RaspiTimingBox Connection open");
-
-            }
-
-            @Override
-            public void onMessage(String s) {
-
-                if(s.endsWith("RaspiTimingBox connected")) return;
-                if(!s.contains("passingNumber")) return;
-                if(verbose) System.out.println("In: " + s);
-                long time;
-                int transponderID;
-
-                try {
-                    JSONObject jsonObject = new JSONObject(s);
-                    transponderID = Integer.parseInt(jsonObject.get("transponder").toString(), 16);
-                    time = Long.parseLong(jsonObject.get("RTC_Time").toString(),16)/1000;
-
-                    processLaps(time, transponderID);
-                } catch (JSONException e) {
-                    System.out.println(e.getMessage());
-                }
-            }
-
-            @Override
-            public void onClose(int i, String s, boolean b) {
-                System.out.println("Connection Closed");
-            }
-
-            @Override
-            public void onError(Exception e) {
-                e.printStackTrace();
-            }
-        };
-        client.connect();
-
-
+        test();
     }
 
-    private void startConverter(String... args){
-        try {
-            new Converter(args);
-        } catch (NullPointerException e){
-            //seems to be some bug inside the ConverterLib
-            System.out.println("Null in Converter, restarting!");
-            startConverter(args);
-        }
-    }
-
-    private void test(){
-        long time = 0;
-        while(true){
-            time += (Math.random()*2000 + 18000);
-
-            if(Math.random()*10 > 9){
-                time+= 5000;
-
-            }
-
-            processLaps(time, 1337);
-            try {
-                Thread.sleep(1500l);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public AxServer() throws ConfigurationException {
-        club = new AxProperties().club;
+    private void startSocketServer() {
         Configuration config = new Configuration();
-        config.setPort(1337);
+        config.setPort(axProperties.PORT);
 
-       final SocketIOServer server = new SocketIOServer(config);
+        final SocketIOServer server = new SocketIOServer(config);
 
-        server.addEventListener("registerDriver", Driver.class, new DataListener<Driver>() {
-            @Override
-            public void onData(SocketIOClient socketIOClient, Driver driver, AckRequest ackRequest) throws Exception {
-                drivers.add(driver);
-                System.out.println("Driver registered: " + driver.getName());
-                for (Car car :driver.getCars()){
-                    System.out.println(" -" + car.getName());
-                }
+        server.addEventListener("registerDriver", Driver.class, (socketIOClient, driver, ackRequest) -> {
+            System.out.println("Driver registered: " + driver.getName());
+            for (Car car : driver.getCars()) {
+                System.out.println(" -" + car.getName());
             }
         });
 
-        server.addEventListener("TestConnection", String.class, new DataListener<String>() {
-            @Override
-            public void onData(SocketIOClient socketIOClient, String s, AckRequest ackRequest) throws Exception {
-                System.out.println("Client connected: " + socketIOClient.getRemoteAddress() + " " + s + " " + ackRequest.toString());
-                socketIOClient.sendEvent("Welcome", club);
-            }
+        server.addEventListener("TestConnection", String.class, (socketIOClient, s, ackRequest) -> {
+            System.out.println("Client connected: " + socketIOClient.getRemoteAddress() + " " + s + " " + ackRequest.toString());
+            socketIOClient.sendEvent("Welcome", axProperties.club);
         });
 
-        server.addConnectListener(new ConnectListener() {
-            @Override
-            public void onConnect(SocketIOClient socketIOClient) {
-                System.out.println("Client connected: " + socketIOClient.getRemoteAddress());
+        server.addConnectListener(socketIOClient -> {
+            System.out.println("Client connected: " + socketIOClient.getRemoteAddress());
 
-                socketIOClient.sendEvent("Welcome", club);
-            }
+            socketIOClient.sendEvent("Welcome", axProperties.club);
         });
-
 
         server.start();
         mServer = server;
 
-
-
-        System.out.println("AxServer up and running on Port " + config.getPort() );
-
+        System.out.println("AxServer up and running on Port " + config.getPort());
     }
 
-
-
-    private static ArrayList<Transponder> transponders = new ArrayList<>();
-
-    private void processLaps(long time, int transponderID) {
-        Transponder transponder = null;
-        for(Transponder t : transponders){
-            if(t.id == transponderID){
-                transponder = t;
+    private void startSerialReader() {
+        //This should not be static
+        new SerialReader(axProperties.COMPORT, data -> {
+            try {
+                Passing passing = axProperties.decoder.decode(data);
+                if (passing != null)
+                    processLaps(passing);
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-        }
-        if(transponder == null)
-            transponders.add(new Transponder(transponderID, time));
-        else
-            transponder.completeLap(time);
+        });
     }
 
+    private void initZeroNetConf() {
+        try {
+            ServiceInfo serviceInfo = ServiceInfo.create("_AxNetConf._tcp.local.",
+                    "AndroidTest", axProperties.PORT,
+                    "test from android");
+            jmdns.registerService(serviceInfo);
+        } catch (IOException e) {
+            e.printStackTrace();
 
-    private class Transponder {
-        public int id;
-        public long startTime;
+        }
+    }
 
-        public Transponder(int id, long startTime) {
-            this.id = id;
-            this.startTime = startTime;
+    public void shutdown() {
+        try {
+            jmdns.unregisterAllServices();
+            jmdns.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void test() {
+        long[] transponder = {1337, 1338, 1339, 1340, 1341, 1342, 1343, 1344, 1345, 1346 };
+
+
+        for(long l :transponder){
+            new Thread(() -> {
+                try {
+                    Thread.sleep((long) (Math.random()*20));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                while (true) {
+                    long time = (long) (Math.random() * 2000 + 1800);
+
+                    if (Math.random() * 10 > 9) {
+                        time += 5000;
+                    }
+
+                    Platform.runLater(() -> processLaps(new Passing(new Date().getTime(), l, Passing.Type.MyLaps)));
+
+                    try {
+                        Thread.sleep(time);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
+        }
+    }
+
+    private void processLaps(Passing passing) {
+        Car car = null;
+
+
+        //Search the car that just passed the line
+        for (Car c : cars) {
+            if (c.getTransponderID() == passing.getTransponderID()) {
+                car = c;
+            }
         }
 
-        public void completeLap(long endTime){
-            if(startTime == 0) {
-                startTime = endTime;
-                return;
-            }
-            System.out.println("OUT:  LapCompleted:" + id + " Time: " + (endTime - startTime));
+
+        //If its not already there create it
+        if(car == null){
+            car = new Car(null,null,passing.getTransponderID(),null);
+            cars.add(car);
+        }
+
+        //If it has no currentlap going on or the Max time is reached, set it in a new Current lap with the passing time
+        if(car.getCurrentLap() == null || car.getCurrentLap().getTime() > axProperties.club.getTracks().get(0).getCourse().getMaxTime()){ //Todo give some feedback about max/min times
+            car.setCurrentLap(new Lap (passing.getTimne(),axProperties.club.getTracks().get(0).getCourse()));
+        } else {
+            //If min time is undercut dont count that lap
+            if(car.getCurrentLap().getTime() < axProperties.club.getTracks().get(0).getCourse().getMinTime())
+                return; //Todo give some feedback
+
+            //else finish the lap
+            Lap finishedLap = car.finishCurrentLap(passing.getTimne());
+            //and send it
             mServer.getBroadcastOperations()
-                    .sendEvent("LapCompleted:" + id, new Gson().toJson(new Lap(endTime - startTime, club.getTracks().get(0).getCourse())));
-            startTime = endTime;
+                    .sendEvent("LapCompleted:" + car.getTransponderID(), new Gson().toJson(finishedLap));
         }
+        final Car finalCar = car;
+        Platform.runLater(() -> mainForm.updateCars(finalCar));
 
-        @Override
-        public boolean equals(Object obj) {
-            if(obj instanceof  Transponder){
-                return ((Transponder)obj).id == id;
-            }
-            return super.equals(obj);
-        }
     }
 }

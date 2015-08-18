@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="209.0" prefWidth="287.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eu.isawsm.accelerate.server.UI.SettingsView">
+   <children>
+       <HBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="5.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+          <children>
+              <VBox alignment="CENTER_RIGHT" spacing="10.0">
+                 <children>
+                     <Label text="Club Name:" />
+                     <Label text="Minimum Lap Time:" />
+                     <Label text="Maximum Lap Time:" />
+                     <Label text="Wifi Port:" />
+                     <Label text="Serial Port:" />
+                     <Label text="Decoder:" />
+                 </children>
+              </VBox>
+              <VBox alignment="CENTER_LEFT" spacing="2.0">
+                 <children>
+                     <TextField fx:id="tfClubName" />
+                     <TextField fx:id="tfMinLapTime" />
+                     <TextField fx:id="tfMaxLapTime" />
+                     <TextField fx:id="tfWifiPort" />
+                     <ComboBox fx:id="cbSerialPort" prefWidth="150.0" />
+                     <ComboBox fx:id="cdDecoder" prefWidth="150.0" />
+                 </children>
+              </VBox>
+          </children>
+       </HBox>
+       <HBox alignment="CENTER_RIGHT" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+          <children>
+              <Button cancelButton="true" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+              <Button defaultButton="true" mnemonicParsing="false" onAction="#save" text="Save" textFill="WHITE" />
+          </children>
+       </HBox>
+   </children>
+</AnchorPane>

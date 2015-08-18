@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="AxServer:jar">
+  <artifact type="jar" build-on-make="true" name="AxServer:jar">
     <output-path>$PROJECT_DIR$/out/artifacts</output-path>
     <root id="archive" name="AxServer.jar">
       <element id="module-output" name="AxServer" />
@@ -34,6 +34,8 @@
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/corundumstudio/socketio/netty-socketio/1.7.6/netty-socketio-1.7.6.jar" path-in-jar="/" />
       <element id="artifact" artifact-name="AxPersistancy:jar" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/javax/jmdns/jmdns/3.4.1/jmdns-3.4.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/controlsfx-8.40.9.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

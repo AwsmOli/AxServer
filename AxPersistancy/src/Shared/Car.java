@@ -203,4 +203,23 @@ public class Car {
     public int hashCode() {
         return (int) (transponderID ^ (transponderID >>> 32));
     }
+
+    public Lap currentLap;
+
+    public Lap getCurrentLap() {
+        return currentLap;
+    }
+
+    public void setCurrentLap(Lap currentLap) {
+        this.currentLap = currentLap;
+    }
+
+    public Lap finishCurrentLap(long time) {
+        Lap finishedLap = getCurrentLap();
+
+        finishedLap.setEndTime(time);
+        addLap(finishedLap);
+        setCurrentLap(new Lap(time, getCurrentLap().getCourse()));
+        return finishedLap;
+    }
 }

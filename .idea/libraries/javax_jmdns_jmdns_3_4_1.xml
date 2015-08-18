@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="javax.jmdns:jmdns:3.4.1" type="repository">
+    <properties maven-id="javax.jmdns:jmdns:3.4.1" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/javax/jmdns/jmdns/3.4.1/jmdns-3.4.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/javax/jmdns/jmdns/3.4.1/jmdns-3.4.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/javax/jmdns/jmdns/3.4.1/jmdns-3.4.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

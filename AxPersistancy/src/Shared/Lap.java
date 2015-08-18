@@ -1,24 +1,41 @@
 package Shared;
 
+import java.util.Date;
+
 /**
  * Represents a Lap
  * Created by Awli on 29.01.2015.
  */
 public class Lap  {
-    private long time;
-    private Course Course;
+    public long getStartTime() {
+        return startTime;
+    }
 
-    public Lap(long time, Course Course) {
-        this.time = time;
+    public void setStartTime(long startTime) {
+        this.startTime = startTime;
+    }
+
+    public long getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(long endTime) {
+        this.endTime = endTime;
+    }
+
+    private Course Course;
+    public long startTime;
+    public long endTime;
+
+
+    public Lap(long startTime, Course Course) {
+        this.startTime = startTime;
         this.Course = Course;
     }
 
     public long getTime() {
-        return time;
-    }
-
-    public void setTime(long time) {
-        this.time = time;
+        if(endTime == 0) return new Date().getTime() - startTime;
+        return endTime - startTime;
     }
 
     public Course getCourse() {
@@ -28,4 +45,6 @@ public class Lap  {
     public void setCourse(Course Course) {
         this.Course = Course;
     }
+
+
 }
