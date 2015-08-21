@@ -21,11 +21,11 @@ public class Driver  {
         this.name = name;
         this.image = image;
         this.mail = mail;
-        cars = new ArrayList<>();
+        cars = new ArrayList<Car>();
     }
 
     public Driver() {
-        cars = new ArrayList<>();
+        cars = new ArrayList<Car>();
     }
 
     

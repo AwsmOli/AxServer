@@ -26,7 +26,7 @@ public class Car {
         this.Clazz =  Clazz;
         this.transponderID = transponderID;
         this.picture = picture;
-        Laps = new ArrayList<>();
+        Laps = new ArrayList<Lap>();
     }
 
     private static double median(double[] m) {
@@ -180,12 +180,12 @@ public class Car {
     }
 
     private ArrayList<Lap> getLapsCopy (){
-        return new ArrayList<>(Laps);
+        return new ArrayList<Lap>(Laps);
     }
 
     private ArrayList<Lap> getLapsCopy (int count){
         if(Laps.size() > count){
-            return new ArrayList<>(Laps.subList(Laps.size()-count-1,Laps.size()-1));
+            return new ArrayList<Lap>(Laps.subList(Laps.size()-count-1,Laps.size()-1));
         }
         return getLapsCopy();
     }

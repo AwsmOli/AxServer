@@ -131,7 +131,6 @@ public class MainForm {
         });
 
 
-
         driverCol.setCellValueFactory(
                 new PropertyValueFactory<>("driver")
         );
@@ -156,7 +155,7 @@ public class MainForm {
         tcIcon.setCellFactory(param -> new TableCell<detailTableEntry, Image>(){
             @Override
             public void updateItem(Image item, boolean empty) {
-                if(item!=null){
+                if(item!=null && !empty){
                     ImageView imageview = new ImageView();
                     imageview.setFitHeight(12);
                     imageview.setFitWidth(12);
@@ -164,6 +163,8 @@ public class MainForm {
 
                     //SETTING ALL THE GRAPHICS COMPONENT FOR CELL
                     setGraphic(imageview);
+                } else {
+                    setGraphic(new ImageView());
                 }
             }
         });
@@ -172,13 +173,15 @@ public class MainForm {
 
 
     }
+    TableColumn<carTableEntry, String> tmp = new TableColumn<>();
     ObservableList<carTableEntry> carTableEntries = FXCollections.observableArrayList();
     public void updateCars(Car c) {
         for(carTableEntry cte : carTableEntries){
             if(cte.car.equals(c)) {
                 cte.car = c;
-                tblResults.getColumns().get(0).setVisible(false);
-                tblResults.getColumns().get(0).setVisible(true);
+                tmp.setVisible(false);
+                tblResults.getColumns().add(new TableColumn<>());
+                tblResults.getColumns().remove(5);
                 return;
             }
         }

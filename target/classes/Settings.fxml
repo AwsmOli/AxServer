@@ -32,6 +32,7 @@
        </HBox>
        <HBox alignment="CENTER_RIGHT" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
           <children>
+            <Label text="Changes may reqire a restart." />
               <Button cancelButton="true" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
               <Button defaultButton="true" mnemonicParsing="false" onAction="#save" text="Save" textFill="WHITE" />
           </children>

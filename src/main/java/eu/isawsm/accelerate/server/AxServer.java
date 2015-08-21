@@ -127,7 +127,7 @@ public class AxServer {
                 }
 
                 while (true) {
-                    long time = (long) (Math.random() * 2000 + 1800);
+                    long time = (long) (Math.random() * 20000 + 1800);
 
                     if (Math.random() * 10 > 9) {
                         time += 5000;
