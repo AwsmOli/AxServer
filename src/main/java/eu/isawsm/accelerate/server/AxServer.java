@@ -133,7 +133,7 @@ public class AxServer {
                         time += 5000;
                     }
 
-                    Platform.runLater(() -> processLaps(new Passing(new Date().getTime(), l, Passing.Type.MyLaps)));
+                    Platform.runLater(() -> processLaps(new Passing(new Date().getTime(), l, Passing.DecoderType.MyLaps)));
 
                     try {
                         Thread.sleep(time);

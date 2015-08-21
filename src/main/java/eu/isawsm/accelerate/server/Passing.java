@@ -1,8 +1,5 @@
 package eu.isawsm.accelerate.server;
 
-import Shared.Lap;
-import com.google.gson.Gson;
-
 import java.util.Date;
 
 /**
@@ -12,19 +9,19 @@ public class Passing {
     private long time;
     private Date timeStamp;
     private long transponderID;
-    private Type Type;
+    private DecoderType type;
 
-    public enum Type{
+    public enum DecoderType {
         MyLaps,
         Robitronic
     }
 
 
-    public Passing(long time, long transponderID, Type type) {
+    public Passing(long time, long transponderID, DecoderType type) {
         this.time = time;
         this.timeStamp = new Date();
         this.transponderID = transponderID;
-        Type = type;
+        this.type = type;
     }
 
     public long getTimne() {
@@ -51,11 +48,11 @@ public class Passing {
         this.transponderID = transponderID;
     }
 
-    public Type getType() {
-        return Type;
+    public DecoderType getType() {
+        return type;
     }
 
-    public void setType(Type type) {
-        Type = type;
+    public void setType(DecoderType type) {
+        this.type = type;
     }
 }

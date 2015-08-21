@@ -51,7 +51,7 @@ public class MyLapsDecoder implements Decoder{
             long transponderID = Long.parseLong(jsonObject.get("transponder").toString(), 16);
             long time = Long.parseLong(jsonObject.get("RTC_Time").toString(), 16) / 1000;
 
-            return new Passing(time, transponderID, Passing.Type.MyLaps);
+            return new Passing(time, transponderID, Passing.DecoderType.MyLaps);
 
         } catch (Exception e) {
             System.out.println("Unable to decode Message: " + e.getMessage());

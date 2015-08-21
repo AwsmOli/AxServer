@@ -27,7 +27,8 @@ public class SettingsView {
     private ObservableList<String> decoderOptions =
             FXCollections.observableArrayList(
                     "MyLaps P89",
-                    "MyLaps P3"
+                    "MyLaps P3",
+                    "Robitronic"
             );
     private ObservableList<String> comPortOptions =
             FXCollections.observableArrayList(

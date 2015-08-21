@@ -5,6 +5,7 @@ import Shared.Course;
 import Shared.Track;
 import eu.isawsm.accelerate.server.Decoder.Decoder;
 import eu.isawsm.accelerate.server.Decoder.MyLapsDecoder;
+import eu.isawsm.accelerate.server.Decoder.RobiDecoder;
 
 import java.io.*;
 import java.net.URI;
@@ -105,6 +106,8 @@ public class AxProperties {
             case "MyLaps P3":
                 decoder = new MyLapsDecoder(MyLapsDecoder.Version.P3);
                 break;
+            case "Robitronic":
+                decoder = new RobiDecoder();
             default:
                 System.out.println("Unrecognized Decoder in settings: " + Decoder);
         }
