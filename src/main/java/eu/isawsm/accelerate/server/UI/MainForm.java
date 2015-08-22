@@ -148,6 +148,7 @@ public class MainForm {
         );
         tblResults.setItems(carTableEntries);
 
+        tblResults.getColumns().add(tmp);
 
         tcNumber.setCellValueFactory(new PropertyValueFactory<>("number"));
 
@@ -180,8 +181,7 @@ public class MainForm {
             if(cte.car.equals(c)) {
                 cte.car = c;
                 tmp.setVisible(false);
-                tblResults.getColumns().add(new TableColumn<>());
-                tblResults.getColumns().remove(5);
+                tmp.setVisible(true);
                 return;
             }
         }

@@ -7,17 +7,20 @@ import com.corundumstudio.socketio.Configuration;
 import com.corundumstudio.socketio.SocketIOServer;
 import com.google.gson.Gson;
 import com.sun.javafx.collections.ObservableListWrapper;
+import com.sun.org.apache.xpath.internal.SourceTree;
 import com.sun.xml.internal.ws.api.databinding.MappingInfo;
 import eu.isawsm.accelerate.server.Readers.SerialReader;
 import eu.isawsm.accelerate.server.UI.MainForm;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import org.apache.commons.codec.BinaryDecoder;
 import org.json.JSONException;
 
 import javax.jmdns.JmmDNS;
 import javax.jmdns.ServiceInfo;
 import java.io.IOException;
+import java.net.BindException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -54,28 +57,38 @@ public class AxServer {
         Configuration config = new Configuration();
         config.setPort(axProperties.PORT);
 
-        final SocketIOServer server = new SocketIOServer(config);
+        try{
+            final SocketIOServer server = new SocketIOServer(config);
+            server.addEventListener("registerDriver", Driver.class, (socketIOClient, driver, ackRequest) -> {
+                System.out.println("Driver registered: " + driver.getName());
+                for (Car car : driver.getCars()) {
+                    System.out.println(" -" + car.getName());
+                }
+            });
 
-        server.addEventListener("registerDriver", Driver.class, (socketIOClient, driver, ackRequest) -> {
-            System.out.println("Driver registered: " + driver.getName());
-            for (Car car : driver.getCars()) {
-                System.out.println(" -" + car.getName());
+            server.addEventListener("TestConnection", String.class, (socketIOClient, s, ackRequest) -> {
+                System.out.println("Client connected: " + socketIOClient.getRemoteAddress() + " " + s + " " + ackRequest.toString());
+                socketIOClient.sendEvent("Welcome", axProperties.club);
+            });
+
+            server.addConnectListener(socketIOClient -> {
+                System.out.println("Client connected: " + socketIOClient.getRemoteAddress());
+
+                socketIOClient.sendEvent("Welcome", axProperties.club);
+            });
+
+            server.start();
+            mServer = server;
+        } catch (Exception e){
+            if(e instanceof BindException){
+                System.out.println("Port " + axProperties.PORT + " is already in use! Is the AxServer already running?");
+                throw e;
             }
-        });
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
 
-        server.addEventListener("TestConnection", String.class, (socketIOClient, s, ackRequest) -> {
-            System.out.println("Client connected: " + socketIOClient.getRemoteAddress() + " " + s + " " + ackRequest.toString());
-            socketIOClient.sendEvent("Welcome", axProperties.club);
-        });
 
-        server.addConnectListener(socketIOClient -> {
-            System.out.println("Client connected: " + socketIOClient.getRemoteAddress());
-
-            socketIOClient.sendEvent("Welcome", axProperties.club);
-        });
-
-        server.start();
-        mServer = server;
 
         System.out.println("AxServer up and running on Port " + config.getPort());
     }
