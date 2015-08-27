@@ -8,75 +8,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30a5888c-aa90-45c4-b72b-4ae62a030bb3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/SerialTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/eu_plib_plib_1_3.xml" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\.idea\libraries\Converter.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\.idea\libraries\lib1.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\META-INF\MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\Client.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\ClientsManager$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\ClientsManager$AcceptThread.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\ClientsManager$ClientReadThread.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\ClientsManager$SendTask.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\ClientsManager.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\ConsoleLog.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\Converter$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\Converter$MySimpleFormatter.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\Converter.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\PortCommon.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\PortsEnum.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\RaspiSerialPort$SerialReader.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\RaspiSerialPort$SerialWriter.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\RaspiSerialPort.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\RaspiTcpIpPort$Reader.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\RaspiTcpIpPort$Writer.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\RaspiTcpIpPort.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\RaspiUdpPort$Reader.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\RaspiUdpPort$Writer.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\RaspiUdpPort.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\RaspiWebServer$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\RaspiWebServer$WebSockets.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Converter\com\skoky\raspi\RaspiWebServer.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\Start_Serial_3002.sh" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\amm.sh" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\ammMac.sh" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\ammWin32.bat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\installation.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\lib\Plib.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\lib\commons-codec-1.8.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\lib\gson-2.2.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\lib\webbit-0.4.15.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\librxtxSerial.jnilib" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\web\index.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\web\script.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\web\style.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\lib\Plib.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\target\classes\Plib.jar" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\AmmConverter\lib\rxtx-2.1.7.jar" afterPath="$PROJECT_DIR$/lib/RXTXcomm.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/App.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/App.class" />
+      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\target\classes\eu\isawsm\accelerate\server\Passing$Type.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/AxPersistancy.jar" afterPath="$PROJECT_DIR$/out/artifacts/AxPersistancy.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/AxProperties.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/AxProperties.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/AxServer.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/AxServer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/AxServer.jar" afterPath="$PROJECT_DIR$/out/artifacts/AxServer.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AxPersistancy/Shared/Car.class" afterPath="$PROJECT_DIR$/out/production/AxPersistancy/Shared/Car.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AxPersistancy/Shared/Lap.class" afterPath="$PROJECT_DIR$/out/production/AxPersistancy/Shared/Lap.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/UI/MainForm$1.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/UI/MainForm$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/UI/MainForm.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/UI/MainForm.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/Decoder/MyLapsDecoder.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/Decoder/MyLapsDecoder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/Passing.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/Passing.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/Readers/SerialReader.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/Readers/SerialReader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/App.java" afterPath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AxPersistancy/AxPersistancy.iml" afterPath="$PROJECT_DIR$/AxPersistancy/AxPersistancy.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxProperties.java" afterPath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxProperties.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AxServer.iml" afterPath="$PROJECT_DIR$/AxServer.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/UI/SettingsView.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/UI/SettingsView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxServer.java" afterPath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/AxServer_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/AxServer_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AxPersistancy/src/Shared/Car.java" afterPath="$PROJECT_DIR$/AxPersistancy/src/Shared/Car.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AxPersistancy/src/Shared/Lap.java" afterPath="$PROJECT_DIR$/AxPersistancy/src/Shared/Lap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/MyLapsDecoder.java" afterPath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/MyLapsDecoder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Readers/SerialReader.java" afterPath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Readers/SerialReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/config.properties" afterPath="$PROJECT_DIR$/out/artifacts/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/style.css" afterPath="$PROJECT_DIR$/target/classes/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AxServer.iws" />
@@ -126,36 +69,64 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyLapsDecoder.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyLapsDecoder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/MyLapsDecoder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6127098">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="50" column="73" selection-start-line="50" selection-start-column="73" selection-end-line="50" selection-end-column="73" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SerialTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/SerialTest.java">
+      <file leaf-file-name="RobiDecoder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/RobiDecoder.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="65" selection-start-line="14" selection-start-column="65" selection-end-line="14" selection-end-column="65" />
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainForm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/MainForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SettingsView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/SettingsView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="48" column="59" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AxServer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.35540542">
+              <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#initZeroNetConf#0;class#AxServer#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AxServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxServer.java">
+      <file leaf-file-name="SocketIOServer.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/netty-socketio-1.7.7.jar!/com/corundumstudio/socketio/SocketIOServer.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="156" column="63" selection-start-line="156" selection-start-column="63" selection-end-line="156" selection-end-column="63" />
-              <folding>
-                <element signature="method#initZeroNetConf#0;class#AxServer#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="-10.333333">
+              <caret line="139" column="16" selection-start-line="139" selection-start-column="16" selection-end-line="139" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -170,44 +141,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AxProperties.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxProperties.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="104" column="55" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="79" />
-              <caret line="103" column="55" selection-start-line="103" selection-start-column="55" selection-end-line="103" selection-end-column="80" />
-              <caret line="102" column="55" selection-start-line="102" selection-start-column="55" selection-end-line="102" selection-end-column="80" />
-              <caret line="101" column="55" selection-start-line="101" selection-start-column="55" selection-end-line="101" selection-end-column="80" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="config.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/out/artifacts/config.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/App.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MsgProcessor.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/eu/plib/plib/1.3/plib-1.3.jar!/eu/plib/P3tools/MsgProcessor.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="70" column="25" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -273,12 +211,12 @@
         <option value="$PROJECT_DIR$/AxPersistancy/src/Shared/Car.java" />
         <option value="$PROJECT_DIR$/AxPersistancy/src/Shared/Lap.java" />
         <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/App.java" />
-        <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxProperties.java" />
         <option value="$PROJECT_DIR$/out/artifacts/config.properties" />
         <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/SerialTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Readers/SerialReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/MyLapsDecoder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxServer.java" />
       </list>
     </option>
   </component>
@@ -1170,12 +1108,12 @@
       <workItem from="1439915073937" duration="15219000" />
       <workItem from="1440340946741" duration="15968000" />
       <workItem from="1440446324067" duration="11346000" />
-      <workItem from="1440703846204" duration="300000" />
+      <workItem from="1440703846204" duration="1881000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225593000" />
+    <option name="totallyTimeSpent" value="227174000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1188,33 +1126,33 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943925" sideWeight="0.49841017" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3271028" sideWeight="0.37763372" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.348659" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33225283" sideWeight="0.41629955" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943925" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32705882" sideWeight="0.6223663" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40186915" sideWeight="0.5798887" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34034267" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15063593" sideWeight="0.5669782" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15063593" sideWeight="0.5669782" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3291829" sideWeight="0.49841017" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291829" sideWeight="0.49841017" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40275526" sideWeight="0.57320875" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40235293" sideWeight="0.42139384" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40186915" sideWeight="0.4201113" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32705882" sideWeight="0.37763372" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -1252,8 +1190,14 @@
           <properties />
           <option name="timeStamp" value="94" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxServer.java</url>
+          <line>181</line>
+          <properties />
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="109" />
+      <option name="time" value="111" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JarApplication">
@@ -1376,20 +1320,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.5172415">
           <caret line="6" column="89" selection-start-line="6" selection-start-column="89" selection-end-line="6" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/SettingsView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="59" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1211#1212#0" expanded="false" />
-            <element signature="e#1277#1278#0" expanded="false" />
-            <element signature="e#2412#2413#0" expanded="false" />
-            <element signature="e#2445#2446#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1412,6 +1343,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1471,6 +1403,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1478,16 +1411,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/MainForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="194" column="30" selection-start-line="194" selection-start-column="17" selection-end-line="194" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1496,8 +1420,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
           <folding>
-            <element signature="e#574#575#0" expanded="false" />
-            <element signature="e#601#602#0" expanded="false" />
+            <element signature="e#552#553#0" expanded="false" />
+            <element signature="e#579#580#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1590,18 +1514,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxProperties.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="104" column="55" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="79" />
-          <caret line="103" column="55" selection-start-line="103" selection-start-column="55" selection-end-line="103" selection-end-column="80" />
-          <caret line="102" column="55" selection-start-line="102" selection-start-column="55" selection-end-line="102" selection-end-column="80" />
-          <caret line="101" column="55" selection-start-line="101" selection-start-column="55" selection-end-line="101" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <caret line="105" column="55" selection-start-line="105" selection-start-column="55" selection-end-line="105" selection-end-column="55" />
+          <caret line="104" column="55" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
+          <caret line="103" column="55" selection-start-line="103" selection-start-column="55" selection-end-line="103" selection-end-column="55" />
+          <caret line="102" column="55" selection-start-line="102" selection-start-column="55" selection-end-line="102" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -1642,21 +1558,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxServer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/MyLapsDecoder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="156" column="63" selection-start-line="156" selection-start-column="63" selection-end-line="156" selection-end-column="63" />
-          <folding>
-            <element signature="method#initZeroNetConf#0;class#AxServer#0" expanded="false" />
-          </folding>
+          <caret line="50" column="73" selection-start-line="50" selection-start-column="73" selection-end-line="50" selection-end-column="73" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/MyLapsDecoder.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/RobiDecoder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6127098">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/MainForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/SettingsView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="59" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/netty-socketio-1.7.7.jar!/com/corundumstudio/socketio/SocketIOServer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.333333">
+          <caret line="139" column="16" selection-start-line="139" selection-start-column="16" selection-end-line="139" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35540542">
+          <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+          <folding>
+            <element signature="method#initZeroNetConf#0;class#AxServer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

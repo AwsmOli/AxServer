@@ -10,6 +10,7 @@ import eu.isawsm.accelerate.server.Readers.SerialReader;
 import eu.isawsm.accelerate.server.UI.MainForm;
 import eu.isawsm.accelerate.server.UI.SettingsView;
 import gnu.io.UnsupportedCommOperationException;
+import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -62,8 +63,7 @@ public class AxServer {
 
 
     private void startUI()  {
-        primaryStage.setOnHidden(event -> shutdown());
-
+        primaryStage.setOnCloseRequest(event -> shutdown());
         showMainView(axProperties);
     }
 
@@ -114,7 +114,7 @@ public class AxServer {
         config.setPort(axProperties.PORT);
 
         try{
-            final SocketIOServer server = new SocketIOServer(config);
+            SocketIOServer server = new SocketIOServer(config);
             server.addEventListener("registerDriver", Driver.class, (socketIOClient, driver, ackRequest) -> {
                 System.out.println("Driver registered: " + driver.getName());
                 for (Car car : driver.getCars()) {
@@ -143,16 +143,14 @@ public class AxServer {
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
-
-
-
         System.out.println("AxServer up and running on Port " + config.getPort());
     }
 
+    private SerialReader serialReader;
     private void startSerialReader() {
         //This should not be static
         try {
-            new SerialReader(axProperties.COMPORT, data -> {
+            serialReader = new SerialReader(axProperties.COMPORT, data -> {
                 try {
                     Passing passing = axProperties.decoder.decode(data);
                     if (passing != null)
@@ -179,8 +177,14 @@ public class AxServer {
 
     public void shutdown() {
         try {
+            primaryStage.hide();
+
             jmDNS.unregisterAllServices();
             jmDNS.close();
+            serialReader.disconnect();
+            mServer.stop();
+            Platform.exit();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
