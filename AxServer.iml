@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -12,12 +12,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="Converter" level="project" />
     <orderEntry type="library" exported="" name="android" level="project" />
     <orderEntry type="library" exported="" name="lib" level="project" />
     <orderEntry type="library" exported="" name="com.google.code.gson:gson:2.3.1" level="project" />
-    <orderEntry type="library" exported="" name="lib1" level="project" />
     <orderEntry type="module" module-name="AxPersistancy" exported="" />
+    <orderEntry type="library" exported="" name="javax.jmdns:jmdns:3.4.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:3.8.1" level="project" />
     <orderEntry type="library" name="Maven: com.corundumstudio.socketio:netty-socketio:1.7.6" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.0.25.Final" level="project" />
@@ -36,6 +35,6 @@
     <orderEntry type="library" name="Maven: org.java-websocket:Java-WebSocket:1.3.0" level="project" />
     <orderEntry type="library" name="Maven: org.json:json:20090211" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.netty:netty:3.2.10.Final" level="project" />
-    <orderEntry type="library" exported="" name="javax.jmdns:jmdns:3.4.1" level="project" />
+    <orderEntry type="library" exported="" name="eu.plib:plib:1.3" level="project" />
   </component>
 </module>

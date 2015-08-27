@@ -24,6 +24,10 @@ public class AxProperties {
     public Decoder decoder;
 
     private Properties prop;
+    public int serialSpeed;
+    public int serialDataBits;
+    public int serialStopBits;
+    public int serialParity;
 
     public AxProperties() {
         init();
@@ -95,6 +99,11 @@ public class AxProperties {
     private void getComPort() {
         COMPORT = prop.getProperty("COMPort");
         if(COMPORT == null) System.out.println("No COMPort defined in settings!");
+
+        serialSpeed = Integer.parseInt(prop.getProperty("serialSpeed", "115200"));
+        serialDataBits= Integer.parseInt(prop.getProperty("serialDataBits", "8"));
+        serialStopBits= Integer.parseInt(prop.getProperty("serialStopBits", "1"));
+        serialParity= Integer.parseInt(prop.getProperty("serialParity" , "0"));
     }
 
     private void getDecoder() {

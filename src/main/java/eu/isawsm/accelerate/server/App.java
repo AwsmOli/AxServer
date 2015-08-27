@@ -19,37 +19,6 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        AxProperties axProperties;
-        axProperties = new AxProperties();
-
-        if(!axProperties.check()){
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Settings.fxml"));
-            Parent root = loader.load();
-            SettingsView settings = loader.getController();
-
-            settings.setProperties(axProperties);
-
-            primaryStage.setScene(new Scene(root));
-            primaryStage.setTitle("Settings - Axelerate Server");
-            primaryStage.getIcons().add(new Image("ic_launcher.png"));
-
-            primaryStage.show();
-        }
-
-
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainForm.fxml"));
-        Parent root = loader.load();
-        MainForm mainForm = loader.getController();
-        primaryStage.setScene(new Scene(root));
-        primaryStage.setTitle(axProperties.club.getName() + " - Axelerate Server");
-        primaryStage.getIcons().add(new Image("ic_launcher.png"));
-
-        mainForm.setStatusText("Connected to " + axProperties.decoder.toString() + " via " + axProperties.COMPORT);
-        mainForm.setPrimaryStage(primaryStage);
-        mainForm.setProperties(axProperties);
-        primaryStage.show();
-
-        new AxServer(axProperties, mainForm);
+        new AxServer(primaryStage);
     }
 }

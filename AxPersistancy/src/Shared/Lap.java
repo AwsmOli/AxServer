@@ -34,7 +34,6 @@ public class Lap  {
     }
 
     public long getTime() {
-        if(endTime == 0) return new Date().getTime() - startTime;
         return endTime - startTime;
     }
 

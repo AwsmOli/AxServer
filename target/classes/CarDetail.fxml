@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" styleClass="headline" text="Driver Name" textFill="#ff9800">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <LineChart layoutX="14.0" layoutY="196.0" legendSide="LEFT" legendVisible="false" prefHeight="259.0" prefWidth="572.0" title="Progression over Time" titleSide="BOTTOM" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+        <xAxis>
+          <CategoryAxis />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="RIGHT" />
+        </yAxis>
+      </LineChart>
+      <Label layoutX="18.0" layoutY="51.0" text="Lap:s" />
+      <Label layoutX="16.0" layoutY="68.0" text="Average Time:" />
+      <Label layoutX="16.0" layoutY="85.0" text="Best Time:" />
+      <Label layoutX="18.0" layoutY="102.0" text="Consistancy:" />
+      <Label layoutX="126.0" layoutY="51.0" text="512" />
+      <Label layoutX="122.0" layoutY="68.0" text="15.45s" />
+      <Label layoutX="122.0" layoutY="85.0" text="13.89s" />
+      <Label layoutX="122.0" layoutY="102.0" text="89,43%" />
+      <Label layoutX="182.0" layoutY="51.0" text="Top 15%" />
+      <Label layoutX="182.0" layoutY="68.0" text="Top 15%" />
+      <Label layoutX="182.0" layoutY="85.0" text="Top 15%" />
+      <Label layoutX="182.0" layoutY="102.0" text="Top 15%" />
+   </children>
+</AnchorPane>

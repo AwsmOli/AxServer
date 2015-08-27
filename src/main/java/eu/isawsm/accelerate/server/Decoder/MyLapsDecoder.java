@@ -17,7 +17,7 @@ public class MyLapsDecoder implements Decoder{
 
     private String name = "MyLaps";
 
-    private com.skoky.Ptools.MsgProcessor msgProcessor;
+    private eu.plib.Ptools.MsgProcessor msgProcessor;
 
     /**
      * Initializes the Decoder with the specified protocol version
@@ -27,11 +27,11 @@ public class MyLapsDecoder implements Decoder{
         switch (version){
             case P3:
                 name = "MyLaps P3";
-                msgProcessor = new com.skoky.P3tools.MsgProcessor();
+                msgProcessor = new eu.plib.P3tools.MsgProcessor(false);
                 break;
             case P98:
                 name = "MyLaps P98";
-                msgProcessor = new com.skoky.P3tools.MsgProcessor();
+                msgProcessor = new eu.plib.P3tools.MsgProcessor(false);
                 break;
         }
     }
@@ -39,14 +39,11 @@ public class MyLapsDecoder implements Decoder{
     @Override
     public Passing decode(byte[] bytes) throws JSONException {
         try {
-
             String JSONMsg = msgProcessor.parse(bytes).toString();
+            System.out.println(JSONMsg);
             if(!JSONMsg.contains("passingNumber")) return null;
 
-
             JSONObject jsonObject = new JSONObject(JSONMsg);
-
-
 
             long transponderID = Long.parseLong(jsonObject.get("transponder").toString(), 16);
             long time = Long.parseLong(jsonObject.get("RTC_Time").toString(), 16) / 1000;
@@ -55,7 +52,7 @@ public class MyLapsDecoder implements Decoder{
 
         } catch (Exception e) {
             System.out.println("Unable to decode Message: " + e.getMessage());
-            e.printStackTrace();
+          //  e.printStackTrace();
         }
         return null;
     }

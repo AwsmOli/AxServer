@@ -218,6 +218,10 @@ public class Car {
         Lap finishedLap = getCurrentLap();
 
         finishedLap.setEndTime(time);
+        if (finishedLap.getTime() >= finishedLap.getCourse().getMaxTime() || finishedLap.getTime() <= finishedLap.getCourse().getMinTime()) {
+            return null;
+        }
+
         addLap(finishedLap);
         setCurrentLap(new Lap(time, getCurrentLap().getCourse()));
         return finishedLap;

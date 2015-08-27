@@ -6,22 +6,24 @@ import Shared.Lap;
 import com.corundumstudio.socketio.Configuration;
 import com.corundumstudio.socketio.SocketIOServer;
 import com.google.gson.Gson;
-import com.sun.javafx.collections.ObservableListWrapper;
-import com.sun.org.apache.xpath.internal.SourceTree;
-import com.sun.xml.internal.ws.api.databinding.MappingInfo;
 import eu.isawsm.accelerate.server.Readers.SerialReader;
 import eu.isawsm.accelerate.server.UI.MainForm;
+import eu.isawsm.accelerate.server.UI.SettingsView;
+import gnu.io.UnsupportedCommOperationException;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import org.apache.commons.codec.BinaryDecoder;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 import org.json.JSONException;
 
 import javax.jmdns.JmmDNS;
 import javax.jmdns.ServiceInfo;
 import java.io.IOException;
 import java.net.BindException;
-import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -30,19 +32,25 @@ import java.util.Date;
  */
 public class AxServer {
 
-    private AxProperties axProperties;
+    private AxProperties axProperties = new AxProperties();
     private MainForm mainForm;
     private SocketIOServer mServer;
 
     private static final ObservableList<Car> cars = FXCollections.observableArrayList();
 
-    private JmmDNS jmdns = JmmDNS.Factory.getInstance();
+    private JmmDNS jmDNS = JmmDNS.Factory.getInstance();
+    private Stage primaryStage;
 
-    public AxServer(AxProperties axProperties, MainForm mainForm) {
-        this.axProperties = axProperties;
-        this.mainForm = mainForm;
+    public AxServer(Stage primaryStage) {
+        this.primaryStage = primaryStage;
 
-        mainForm.setCars(cars);
+        if(!axProperties.check()){
+            showSettings(axProperties);
+        }
+
+        startUI();
+
+
 
         new Thread(() -> {
             startSocketServer();
@@ -50,8 +58,56 @@ public class AxServer {
             initZeroNetConf();
         }).start();
 
-        test();
     }
+
+
+    private void startUI()  {
+        primaryStage.setOnHidden(event -> shutdown());
+
+        showMainView(axProperties);
+    }
+
+    private void showMainView(AxProperties axProperties)  {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainForm.fxml"));
+            Parent root = loader.load();
+            mainForm = loader.getController();
+            primaryStage.setScene(new Scene(root));
+            primaryStage.setTitle(axProperties.club.getName() + " - Axelerate Server");
+            primaryStage.getIcons().add(new Image("ic_launcher.png"));
+
+            mainForm.setStatusText("Connected to " + axProperties.decoder.toString() + " via " + axProperties.COMPORT);
+            mainForm.setPrimaryStage(primaryStage);
+            mainForm.setProperties(axProperties);
+
+            mainForm.setCars(cars);
+            primaryStage.show();
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void showSettings(AxProperties axProperties) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Settings.fxml"));
+            Parent root;
+
+            root = loader.load();
+
+            SettingsView settings = loader.getController();
+
+            settings.setProperties(axProperties);
+
+            primaryStage.setScene(new Scene(root));
+            primaryStage.setTitle("Settings - Axelerate Server");
+            primaryStage.getIcons().add(new Image("ic_launcher.png"));
+
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     private void startSocketServer() {
         Configuration config = new Configuration();
@@ -95,15 +151,19 @@ public class AxServer {
 
     private void startSerialReader() {
         //This should not be static
-        new SerialReader(axProperties.COMPORT, data -> {
-            try {
-                Passing passing = axProperties.decoder.decode(data);
-                if (passing != null)
-                    processLaps(passing);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        });
+        try {
+            new SerialReader(axProperties.COMPORT, data -> {
+                try {
+                    Passing passing = axProperties.decoder.decode(data);
+                    if (passing != null)
+                        processLaps(passing);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }, axProperties.serialSpeed, axProperties.serialDataBits, axProperties.serialStopBits, axProperties.serialParity);
+        } catch (UnsupportedCommOperationException e) {
+            e.printStackTrace();
+        }
     }
 
     private void initZeroNetConf() {
@@ -111,17 +171,16 @@ public class AxServer {
             ServiceInfo serviceInfo = ServiceInfo.create("_AxNetConf._tcp.local.",
                     "AndroidTest", axProperties.PORT,
                     "test from android");
-            jmdns.registerService(serviceInfo);
+            jmDNS.registerService(serviceInfo);
         } catch (IOException e) {
             e.printStackTrace();
-
         }
     }
 
     public void shutdown() {
         try {
-            jmdns.unregisterAllServices();
-            jmdns.close();
+            jmDNS.unregisterAllServices();
+            jmDNS.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -129,7 +188,6 @@ public class AxServer {
 
     private void test() {
         long[] transponder = {1337, 1338, 1339, 1340, 1341, 1342, 1343, 1344, 1345, 1346 };
-
 
         for(long l :transponder){
             new Thread(() -> {
@@ -139,6 +197,7 @@ public class AxServer {
                     e.printStackTrace();
                 }
 
+                //noinspection InfiniteLoopStatement
                 while (true) {
                     long time = (long) (Math.random() * 20000 + 1800);
 
@@ -176,16 +235,16 @@ public class AxServer {
             cars.add(car);
         }
 
-        //If it has no currentlap going on or the Max time is reached, set it in a new Current lap with the passing time
-        if(car.getCurrentLap() == null || car.getCurrentLap().getTime() > axProperties.club.getTracks().get(0).getCourse().getMaxTime()){ //Todo give some feedback about max/min times
+        //If it has no currentlap going on set it in a new Current lap with the passing time
+        if(car.getCurrentLap() == null ){
             car.setCurrentLap(new Lap (passing.getTimne(),axProperties.club.getTracks().get(0).getCourse()));
         } else {
-            //If min time is undercut dont count that lap
-            if(car.getCurrentLap().getTime() < axProperties.club.getTracks().get(0).getCourse().getMinTime())
-                return; //Todo give some feedback
-
             //else finish the lap
             Lap finishedLap = car.finishCurrentLap(passing.getTimne());
+
+            if(finishedLap == null) //Max or Min Time check
+                return;
+
             //and send it
             mServer.getBroadcastOperations()
                     .sendEvent("LapCompleted:" + car.getTransponderID(), new Gson().toJson(finishedLap));

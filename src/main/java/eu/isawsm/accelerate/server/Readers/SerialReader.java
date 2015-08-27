@@ -1,13 +1,13 @@
 package eu.isawsm.accelerate.server.Readers;
 import eu.isawsm.accelerate.server.PassingListener;
 import gnu.io.*;
-import org.apache.commons.codec.DecoderException;
-import org.apache.commons.codec.binary.Hex;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.*;
+import java.util.concurrent.BlockingDeque;
+import java.util.concurrent.LinkedBlockingDeque;
 
 /**
  * Serial Helper Class
@@ -27,20 +27,45 @@ public class SerialReader implements SerialPortEventListener {
     //the timeout value for connecting with the port
     final static int TIMEOUT = 2000;
 
-    //some ascii values for for certain things
-    final static int SPACE_ASCII = 32;
-    final static int DASH_ASCII = 45;
-
-    public SerialReader(String Port, PassingListener passingListener) {
+    public SerialReader(String Port, PassingListener passingListener,int speed,int databit,int stopbit,int parity) throws UnsupportedCommOperationException {
         this.passingListener = passingListener;
+
+        runProcessingThread(passingListener);
+
         connect(Port);
+
         if (isConnected()) {
+            serialPort.setSerialPortParams(speed, databit,stopbit,parity);
             if (initIOStream()) {
                 initListener();
                 return;
             }
         }
         throw new IllegalStateException("Cant connect to SerialPort " + Port);
+    }
+
+    private void runProcessingThread(PassingListener passingListener) {
+        new Thread(() -> {
+            try {
+                byte[] packet = new byte[0];
+                while(true) {
+                    byte b = buffer.take();
+                    if(b == -114){
+                        //Beginning of a new Packet
+                        packet = new byte[0];
+                    }
+                    packet = Arrays.copyOfRange(packet, 0, packet.length + 1);
+                    packet[packet.length -1] = b;
+
+                    if(b == -113) {
+                        //End of a Packet
+                        passingListener.onPaassing(packet);
+                    }
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
     }
 
     public boolean isConnected() {
@@ -51,40 +76,37 @@ public class SerialReader implements SerialPortEventListener {
         this.bConnected = bConnected;
     }
 
-    @Override
-    public  void serialEvent(SerialPortEvent serialPortEvent){
-        byte[] data = new byte[0];
+    public void serialEvent(SerialPortEvent event) {
+        switch (event.getEventType()) {
+            case SerialPortEvent.DATA_AVAILABLE:
+                readSerial();
+                break;
+        }
+    }
 
-        if (serialPortEvent.getEventType() == SerialPortEvent.DATA_AVAILABLE) {
-            try {
-                for(int i = 1;true;i++){
-                    byte singleData = (byte) input.read();
-                    if(singleData == -1) break;
-                    data = Arrays.copyOfRange(data,0,i);
-                    data[i] = singleData;
-                }
-                passingListener.onPaassing(data);
-            } catch (Exception e) {
-                System.out.println("Failed to read data. (" + e.toString() + ")");
+    private BlockingDeque<Byte> buffer = new LinkedBlockingDeque<>();
+
+    private void readSerial(){
+        try {
+            int availableBytes = input.available();
+
+            while(availableBytes > 0){
+                buffer.put((byte) input.read());
+                availableBytes--;
             }
+        } catch (IOException e) {
+            System.out.println("Failed to read data. (" + e.toString() + ")");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
     //method that can be called to send data
     //pre style="font-size: 11px;": open serial port
     //post: data sent to the other device
-    public void writeData(int leftThrottle, int rightThrottle) {
+    public void writeData(int leftThrottle) {
         try {
             output.write(leftThrottle);
-            output.flush();
-            //this is a delimiter for the data
-            output.write(DASH_ASCII);
-            output.flush();
-
-            output.write(rightThrottle);
-            output.flush();
-            //will be read as a byte so it is a space key
-            output.write(SPACE_ASCII);
             output.flush();
         } catch (Exception e) {
             System.out.println("Failed to write data. (" + e.toString() + ")");
@@ -148,8 +170,8 @@ public class SerialReader implements SerialPortEventListener {
     public boolean initIOStream() {
         try {
             input = serialPort.getInputStream();
+
             output = serialPort.getOutputStream();
-            writeData(0, 0);
 
             return true;
         } catch (IOException e) {
@@ -176,7 +198,7 @@ public class SerialReader implements SerialPortEventListener {
     public void disconnect() {
         //close the serial port
         try {
-            writeData(0, 0);
+            writeData(0);
 
             serialPort.removeEventListener();
             serialPort.close();
