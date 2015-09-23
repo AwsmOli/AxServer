@@ -4,11 +4,10 @@ package eu.isawsm.accelerate.server.UI;/**
 
 import Shared.Car;
 import Shared.Course;
+import Shared.Driver;
 import Shared.Lap;
-import com.sun.javafx.binding.SelectBinding;
 import eu.isawsm.accelerate.server.AxProperties;
 import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -22,11 +21,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 import org.controlsfx.dialog.Dialog;
 import org.controlsfx.dialog.Dialogs;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -46,13 +45,24 @@ public class MainForm {
     public TableColumn<detailTableEntry, Image> tcIcon;
     public TableColumn<detailTableEntry, Double> tcTime;
     private AxProperties properties;
-    private ObservableList<Car> cars;
+    private ObservableList<Driver> drivers;
+
+    private ArrayList<NameChangedListener> nameChangedListeners = new ArrayList<>();
 
     public void setPrimaryStage(Stage primaryStage) {
         this.primaryStage = primaryStage;
 
 
     }
+
+    public void addNameChangedListener(NameChangedListener listener){
+        nameChangedListeners.add(listener);
+    }
+
+    public void removeNameChangedListener(NameChangedListener listener){
+        nameChangedListeners.remove(listener);
+    }
+
 
     private Stage primaryStage;
 
@@ -99,8 +109,8 @@ public class MainForm {
         this.properties = properties;
     }
 
-    public void setCars(ObservableList<Car> cars) {
-        this.cars = cars;
+    public void setDrivers(ObservableList<Driver> drivers) {
+        this.drivers = drivers;
 
         tblResults.setRowFactory(tv -> {
             TableRow<carTableEntry> row = new TableRow<>();
@@ -118,8 +128,15 @@ public class MainForm {
                             .message("Name:")
                             .showTextInput(rowData.getDriver());
 
-                    if (response.isPresent() && !response.get().trim().isEmpty())
+
+
+                    if (response.isPresent() && !response.get().trim().isEmpty()) {
                         rowData.setDriver(response.get().trim());
+
+                        for(NameChangedListener listener : nameChangedListeners){
+                            listener.onNameChanged(rowData.car, response.get().trim());
+                        }
+                    }
                 } else {
                     ObservableList<detailTableEntry> detailTableEntries = FXCollections.observableArrayList();
                     detailTableEntries.addAll(row.getItem().car.getLaps().stream().map(l -> new detailTableEntry(row.getItem().car, l)).collect(Collectors.toList()));
@@ -198,15 +215,25 @@ public class MainForm {
         }
 
         public Car car;
-        private String driverName = null;
 
         public String getDriver() {
-            if(driverName != null) return driverName;
-            return String.valueOf(car.getTransponderID());
+            for(Driver d : drivers){
+                int i = new ArrayList<>(d.getCars()).indexOf(car);
+                if(i <= 0){
+                    return d.getName() + " " +car.getName();
+                }
+            }
+            return "No Driver";
         }
 
-        public void setDriver(String driverName) {
-            this.driverName = driverName;
+        public void setDriver(String name) {
+            for(Driver d : drivers){
+                int i = new ArrayList<>(d.getCars()).indexOf(car);
+                if(i <= 0){
+                    d.setName(name);
+                    return;
+                }
+            }
         }
 
         public Double getAvg() {
@@ -237,7 +264,7 @@ public class MainForm {
         }
 
         public Integer getNumber() {
-            return car.getLaps().indexOf(lap) +1;
+            return new ArrayList<>(car.getLaps()).indexOf(lap) +1;
         }
 
         public Image getImage() {

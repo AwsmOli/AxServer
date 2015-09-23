@@ -3,11 +3,13 @@ package Shared;
 import android.graphics.Bitmap;
 import android.os.Parcel;
 
+import java.io.Serializable;
+
 /**
  * Represents a Manufacturer
  * Created by Awli on 31.01.2015.
  */
-public class Manufacturer {
+public class Manufacturer implements Serializable {
 
     private String name;
     private Bitmap image;

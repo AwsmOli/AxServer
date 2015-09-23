@@ -1,4 +1,5 @@
 package eu.isawsm.accelerate.server.Readers;
+import eu.isawsm.accelerate.server.Decoder.Decoder;
 import eu.isawsm.accelerate.server.PassingListener;
 import gnu.io.*;
 
@@ -16,7 +17,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 public class SerialReader implements SerialPortEventListener {
 
     private SerialPort serialPort = null;
-    private PassingListener passingListener;
+    private Decoder decoder;
 
     //input and output streams for sending and receiving data
     private InputStream input = null;
@@ -27,10 +28,9 @@ public class SerialReader implements SerialPortEventListener {
     //the timeout value for connecting with the port
     final static int TIMEOUT = 2000;
 
-    public SerialReader(String Port, PassingListener passingListener,int speed,int databit,int stopbit,int parity) throws UnsupportedCommOperationException {
-        this.passingListener = passingListener;
+    public SerialReader(String Port, Decoder decoder,int speed,int databit,int stopbit,int parity) throws UnsupportedCommOperationException {
+        this.decoder = decoder;
 
-        runProcessingThread(passingListener);
 
         connect(Port);
 
@@ -42,30 +42,6 @@ public class SerialReader implements SerialPortEventListener {
             }
         }
         throw new IllegalStateException("Cant connect to SerialPort " + Port);
-    }
-
-    private void runProcessingThread(PassingListener passingListener) {
-        new Thread(() -> {
-            try {
-                byte[] packet = new byte[0];
-                while(true) {
-                    byte b = buffer.take();
-                    if(b == -114){
-                        //Beginning of a new Packet
-                        packet = new byte[0];
-                    }
-                    packet = Arrays.copyOfRange(packet, 0, packet.length + 1);
-                    packet[packet.length -1] = b;
-
-                    if(b == -113) {
-                        //End of a Packet
-                        passingListener.onPaassing(packet);
-                    }
-                }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }).start();
     }
 
     public boolean isConnected() {
@@ -84,14 +60,12 @@ public class SerialReader implements SerialPortEventListener {
         }
     }
 
-    private BlockingDeque<Byte> buffer = new LinkedBlockingDeque<>();
-
     private void readSerial(){
         try {
             int availableBytes = input.available();
 
             while(availableBytes > 0){
-                buffer.put((byte) input.read());
+                decoder.buffer.put((byte) input.read());
                 availableBytes--;
             }
         } catch (IOException e) {
@@ -211,5 +185,9 @@ public class SerialReader implements SerialPortEventListener {
             System.out.println("Failed to close " + serialPort.getName()
                     + "(" + e.toString() + ")");
         }
+    }
+
+    public void addPassingListener(PassingListener passingListener) {
+        decoder.addPassingListener(passingListener);
     }
 }

@@ -1,10 +1,12 @@
 package Shared;
 
+import java.io.Serializable;
+
 /**
  * Represents a Model
  * Created by Awli on 31.01.2015.
  */
-public class Model  {
+public class Model implements Serializable {
 
     private Manufacturer Manufacturer;
     private String name;

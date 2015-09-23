@@ -2,30 +2,34 @@ package Shared;
 
 import android.graphics.Bitmap;
 
+import java.io.Serializable;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 
 /**
  * Represents a Driver
  * Created by Awli on 29.01.2015.
  */
-public class Driver  {
+public class Driver implements Serializable {
    
     private String name;
     private Bitmap image;
     private URI mail;
-    private ArrayList<Car> cars;
+    private HashSet<Car> cars;
 
     public Driver(String name, Bitmap image, URI mail) {
         this.name = name;
         this.image = image;
         this.mail = mail;
-        cars = new ArrayList<Car>();
+        cars = new HashSet<>();
     }
 
     public Driver() {
-        cars = new ArrayList<Car>();
+        cars = new HashSet<>();
+        name = "";
     }
 
     
@@ -69,17 +73,26 @@ public class Driver  {
     }
 
     
-    public ArrayList<Car> getCars() {
+    public HashSet<Car> getCars() {
         return cars;
     }
 
     
-    public void setCars(ArrayList<Car> cars) {
+    public void setCars(HashSet<Car> cars) {
         this.cars = cars;
     }
 
     
     public String toString() {
-        return name;
+        return name != null ? name : "";
+    }
+
+    public Car getCar(long transponderID) {
+        for(Car c : cars){
+            if(c.getTransponderID() == transponderID){
+                return c;
+            }
+        }
+        return null;
     }
 }

@@ -117,6 +117,7 @@ public class AxProperties {
                 break;
             case "Robitronic":
                 decoder = new RobiDecoder();
+                break;
             default:
                 System.out.println("Unrecognized Decoder in settings: " + Decoder);
         }

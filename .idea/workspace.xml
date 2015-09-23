@@ -8,18 +8,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30a5888c-aa90-45c4-b72b-4ae62a030bb3" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\target\classes\eu\isawsm\accelerate\server\Passing$Type.class" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/NameChangedListener.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/AxPersistancy.jar" afterPath="$PROJECT_DIR$/out/artifacts/AxPersistancy.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/AxProperties.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/AxProperties.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/AxServer.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/AxServer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/AxServer.jar" afterPath="$PROJECT_DIR$/out/artifacts/AxServer.jar" />
+      <change type="MODIFICATION" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\out\production\AxPersistancy\Shared\Car.class" afterPath="C:\Users\ofade\Documents\GitHub\AxServer\out\production\AxPersistancy\Shared\Car.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AxPersistancy/Shared/Clazz.class" afterPath="$PROJECT_DIR$/out/production/AxPersistancy/Shared/Clazz.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AxPersistancy/Shared/Club.class" afterPath="$PROJECT_DIR$/out/production/AxPersistancy/Shared/Club.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AxPersistancy/Shared/Course.class" afterPath="$PROJECT_DIR$/out/production/AxPersistancy/Shared/Course.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/Decoder/Decoder.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/Decoder/Decoder.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\out\production\AxPersistancy\Shared\Driver.class" afterPath="C:\Users\ofade\Documents\GitHub\AxServer\out\production\AxPersistancy\Shared\Driver.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\ofade\Documents\GitHub\AxServer\out\production\AxPersistancy\Shared\Lap.class" afterPath="C:\Users\ofade\Documents\GitHub\AxServer\out\production\AxPersistancy\Shared\Lap.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/UI/MainForm$1.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/UI/MainForm$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/UI/MainForm$carTableEntry.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/UI/MainForm$carTableEntry.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/UI/MainForm$detailTableEntry.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/UI/MainForm$detailTableEntry.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/UI/MainForm.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/UI/MainForm.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AxPersistancy/Shared/Manufacturer.class" afterPath="$PROJECT_DIR$/out/production/AxPersistancy/Shared/Manufacturer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AxPersistancy/Shared/Model.class" afterPath="$PROJECT_DIR$/out/production/AxPersistancy/Shared/Model.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/Decoder/MyLapsDecoder$1.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/Decoder/MyLapsDecoder$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/Decoder/MyLapsDecoder$Version.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/Decoder/MyLapsDecoder$Version.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/Decoder/MyLapsDecoder.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/Decoder/MyLapsDecoder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/Passing.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/Passing.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/PassingListener.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/PassingListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/Decoder/RobiDecoder.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/Decoder/RobiDecoder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/Readers/SerialReader.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/Readers/SerialReader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/UI/SettingsView.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/UI/SettingsView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/SerialTest.class" afterPath="$PROJECT_DIR$/target/classes/eu/isawsm/accelerate/server/SerialTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AxPersistancy/Shared/Track.class" afterPath="$PROJECT_DIR$/out/production/AxPersistancy/Shared/Track.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxProperties.java" afterPath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxProperties.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxServer.java" afterPath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AxPersistancy/src/Shared/Car.java" afterPath="$PROJECT_DIR$/AxPersistancy/src/Shared/Car.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AxPersistancy/src/Shared/Clazz.java" afterPath="$PROJECT_DIR$/AxPersistancy/src/Shared/Clazz.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AxPersistancy/src/Shared/Club.java" afterPath="$PROJECT_DIR$/AxPersistancy/src/Shared/Club.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AxPersistancy/src/Shared/Course.java" afterPath="$PROJECT_DIR$/AxPersistancy/src/Shared/Course.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/Decoder.java" afterPath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/Decoder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AxPersistancy/src/Shared/Driver.java" afterPath="$PROJECT_DIR$/AxPersistancy/src/Shared/Driver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AxPersistancy/src/Shared/Lap.java" afterPath="$PROJECT_DIR$/AxPersistancy/src/Shared/Lap.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/MainForm.java" afterPath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/MainForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AxPersistancy/src/Shared/Manufacturer.java" afterPath="$PROJECT_DIR$/AxPersistancy/src/Shared/Manufacturer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AxPersistancy/src/Shared/Model.java" afterPath="$PROJECT_DIR$/AxPersistancy/src/Shared/Model.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/MyLapsDecoder.java" afterPath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/MyLapsDecoder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/PassingListener.java" afterPath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/PassingListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/RobiDecoder.java" afterPath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/RobiDecoder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Readers/SerialReader.java" afterPath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Readers/SerialReader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/SerialTest.java" afterPath="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/SerialTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AxPersistancy/src/Shared/Track.java" afterPath="$PROJECT_DIR$/AxPersistancy/src/Shared/Track.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/config.properties" afterPath="$PROJECT_DIR$/out/artifacts/config.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AxServer.iws" />
@@ -47,33 +80,73 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SerialReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Readers/SerialReader.java">
+      <file leaf-file-name="AxServer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxServer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="50" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="50" />
+              <caret line="272" column="9" selection-start-line="272" selection-start-column="9" selection-end-line="272" selection-end-column="9" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#initZeroNetConf#0;class#AxServer#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PassingListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/PassingListener.java">
+      <file leaf-file-name="Predicate.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/util/function/Predicate.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyLapsDecoder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/MyLapsDecoder.java">
+      <file leaf-file-name="Lap.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Lap.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="73" selection-start-line="50" selection-start-column="73" selection-end-line="50" selection-end-column="73" />
+              <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+              <folding>
+                <element signature="e#720#721#0" expanded="true" />
+                <element signature="e#762#763#0" expanded="true" />
+                <element signature="e#868#869#0" expanded="true" />
+                <element signature="e#904#905#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Car.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Car.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="183" column="9" selection-start-line="183" selection-start-column="9" selection-end-line="183" selection-end-column="9" />
+              <folding>
+                <element signature="e#1120#1121#0" expanded="true" />
+                <element signature="e#1148#1149#0" expanded="true" />
+                <element signature="e#1189#1190#0" expanded="true" />
+                <element signature="e#1223#1224#0" expanded="true" />
+                <element signature="e#1740#1741#0" expanded="true" />
+                <element signature="e#1784#1785#0" expanded="true" />
+                <element signature="e#2848#2849#0" expanded="true" />
+                <element signature="e#2895#2896#0" expanded="true" />
+                <element signature="e#4054#4055#0" expanded="true" />
+                <element signature="e#4081#4082#0" expanded="true" />
+                <element signature="e#4116#4117#0" expanded="true" />
+                <element signature="e#4145#4146#0" expanded="true" />
+                <element signature="e#4535#4536#0" expanded="true" />
+                <element signature="e#4579#4580#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SerialTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/SerialTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="51" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -83,70 +156,62 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/RobiDecoder.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainForm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/MainForm.java">
+      <file leaf-file-name="HashSet.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.7.0_79/src.zip!/java/util/HashSet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SettingsView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/SettingsView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="59" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AxServer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35540542">
-              <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+              <caret line="215" column="19" selection-start-line="215" selection-start-column="19" selection-end-line="215" selection-end-column="19" />
               <folding>
-                <element signature="method#initZeroNetConf#0;class#AxServer#0" expanded="false" />
+                <element signature="e#7993#7994#0" expanded="true" />
+                <element signature="e#8041#8042#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SocketIOServer.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/netty-socketio-1.7.7.jar!/com/corundumstudio/socketio/SocketIOServer.class">
+      <file leaf-file-name="MainForm.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/MainForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.333333">
-              <caret line="139" column="16" selection-start-line="139" selection-start-column="16" selection-end-line="139" selection-end-column="16" />
+            <state vertical-scroll-proportion="3.991228">
+              <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NameChangedListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/NameChangedListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Decoder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/Decoder.java">
+      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out/artifacts/config.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
+              <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+              <folding>
+                <element signature="e#687#688#0" expanded="true" />
+                <element signature="e#714#715#0" expanded="true" />
+                <element signature="e#1121#1122#0" expanded="true" />
+                <element signature="e#1150#1151#0" expanded="true" />
+                <element signature="e#1267#1268#0" expanded="true" />
+                <element signature="e#1294#1295#0" expanded="true" />
+                <element signature="e#1414#1415#0" expanded="true" />
+                <element signature="e#1461#1462#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -156,8 +221,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JavaFXApplication" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -184,39 +249,41 @@
         <option value="$PROJECT_DIR$/src/com/company/AxServer.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/config.properties" />
-        <option value="$PROJECT_DIR$/AxPersistancy/src/Shared/Track.java" />
-        <option value="$PROJECT_DIR$/AxPersistancy/src/Shared/Model.java" />
-        <option value="$PROJECT_DIR$/AxPersistancy/src/Shared/Manufacturer.java" />
-        <option value="$PROJECT_DIR$/AxPersistancy/src/Shared/Club.java" />
-        <option value="$PROJECT_DIR$/AxPersistancy/src/Shared/Clazz.java" />
         <option value="$PROJECT_DIR$/lib/META-INF/MANIFEST.MF" />
-        <option value="$PROJECT_DIR$/AxPersistancy/src/Shared/Course.java" />
         <option value="$PROJECT_DIR$/.idea/misc.xml" />
         <option value="$PROJECT_DIR$/.idea/compiler.xml" />
         <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder.java" />
         <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/SerialReader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/Decoder.java" />
         <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/PassingEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/PassingListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/MainForm.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/PropertiesException.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Settings.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/SettingsView.java" />
         <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Passing.java" />
         <option value="$PROJECT_DIR$/src/main/resources/MainForm.fxml" />
-        <option value="$PROJECT_DIR$/AxPersistancy/src/Shared/Driver.java" />
         <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/RobitronicDecoder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/MainForm.java" />
         <option value="$PROJECT_DIR$/src/main/resources/style.css" />
-        <option value="$PROJECT_DIR$/AxPersistancy/src/Shared/Car.java" />
-        <option value="$PROJECT_DIR$/AxPersistancy/src/Shared/Lap.java" />
         <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/App.java" />
-        <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxProperties.java" />
-        <option value="$PROJECT_DIR$/out/artifacts/config.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/SerialTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/PassingListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Readers/SerialReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/MyLapsDecoder.java" />
+        <option value="$PROJECT_DIR$/out/artifacts/config.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/Decoder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/RobiDecoder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/SerialTest.java" />
+        <option value="$PROJECT_DIR$/AxPersistancy/src/Shared/Clazz.java" />
+        <option value="$PROJECT_DIR$/AxPersistancy/src/Shared/Club.java" />
+        <option value="$PROJECT_DIR$/AxPersistancy/src/Shared/Course.java" />
+        <option value="$PROJECT_DIR$/AxPersistancy/src/Shared/Manufacturer.java" />
+        <option value="$PROJECT_DIR$/AxPersistancy/src/Shared/Model.java" />
+        <option value="$PROJECT_DIR$/AxPersistancy/src/Shared/Track.java" />
+        <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxProperties.java" />
+        <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/NameChangedListener.java" />
+        <option value="$PROJECT_DIR$/AxPersistancy/src/Shared/Lap.java" />
+        <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/MainForm.java" />
+        <option value="$PROJECT_DIR$/AxPersistancy/src/Shared/Car.java" />
         <option value="$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxServer.java" />
+        <option value="$PROJECT_DIR$/AxPersistancy/src/Shared/Driver.java" />
       </list>
     </option>
   </component>
@@ -243,10 +310,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="2576" />
-    <option name="height" value="1416" />
+    <option name="x" value="395" />
+    <option name="y" value="36" />
+    <option name="width" value="1280" />
+    <option name="height" value="792" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -276,17 +343,12 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="AxServer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -328,6 +390,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -413,6 +479,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Readers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AxServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AxServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Decoder" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -428,14 +524,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="production" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AxPersistancy" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -509,6 +597,41 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Changed Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="AxServer">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="AxServer">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="AxPersistancy">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -619,7 +742,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1108,12 +1230,17 @@
       <workItem from="1439915073937" duration="15219000" />
       <workItem from="1440340946741" duration="15968000" />
       <workItem from="1440446324067" duration="11346000" />
-      <workItem from="1440703846204" duration="1881000" />
+      <workItem from="1440703846204" duration="1944000" />
+      <workItem from="1440962431755" duration="661000" />
+      <workItem from="1441043207626" duration="7811000" />
+      <workItem from="1441130721336" duration="16899000" />
+      <workItem from="1441480161742" duration="5577000" />
+      <workItem from="1441818415266" duration="24355000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227174000" />
+    <option name="totallyTimeSpent" value="282540000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1125,28 +1252,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
-    <editor active="false" />
+    <frame x="395" y="36" width="1280" height="792" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943925" sideWeight="0.49841017" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3271028" sideWeight="0.37763372" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32705882" sideWeight="0.36061588" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.348659" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33225283" sideWeight="0.41629955" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943925" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40186915" sideWeight="0.5798887" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7848485" sideWeight="0.6337115" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34034267" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15063593" sideWeight="0.5669782" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31065574" sideWeight="0.5669782" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291829" sideWeight="0.49841017" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32784313" sideWeight="0.4821718" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40275526" sideWeight="0.57320875" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40186915" sideWeight="0.4201113" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4062745" sideWeight="0.36628848" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1180,35 +1307,47 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/SerialTest.java</url>
-          <line>2</line>
-          <properties />
-          <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/SerialTest.java</url>
-          <line>27</line>
+          <line>31</line>
           <properties />
           <option name="timeStamp" value="94" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxServer.java</url>
-          <line>181</line>
+          <line>211</line>
           <properties />
           <option name="timeStamp" value="110" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxServer.java</url>
+          <line>329</line>
+          <properties />
+          <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxServer.java</url>
+          <line>151</line>
+          <properties />
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxServer.java</url>
+          <line>153</line>
+          <properties />
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxServer.java</url>
+          <line>139</line>
+          <properties />
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="111" />
+      <option name="time" value="139" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JarApplication">
-        <watch expression="car.getCurrentLap().getTime()" language="JAVA" custom="" />
-        <watch expression="axProperties.club.getTracks().get(0).getCourse().getMinTime()" language="JAVA" custom="" />
-        <watch expression="car.getCurrentLap().getTime() &gt; axProperties.club.getTracks().get(0).getCourse().getMaxTime()" language="JAVA" custom="" />
-        <watch expression="l" language="JAVA" custom="" />
-        <watch expression="new Date().getTime() - startTime" language="JAVA" custom="" />
-        <watch expression="startTime" language="JAVA" custom="" />
-        <watch expression="new Date().getTime()" language="JAVA" custom="" />
-        <watch expression="endTime - startTime" language="JAVA" custom="" />
+        <watch expression="getModel()" language="JAVA" custom="" />
+        <watch expression="c.equals(c2)" language="JAVA" custom="" />
       </configuration>
     </watches-manager>
   </component>
@@ -1222,7 +1361,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#6194#6195#0" expanded="false" />
+            <element signature="e#6253#6254#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1231,7 +1372,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1239,9 +1379,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="65" selection-start-line="14" selection-start-column="65" selection-end-line="14" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1262,7 +1400,11 @@
           <caret line="103" column="55" selection-start-line="103" selection-start-column="55" selection-end-line="103" selection-end-column="80" />
           <caret line="102" column="55" selection-start-line="102" selection-start-column="55" selection-end-line="102" selection-end-column="80" />
           <caret line="101" column="55" selection-start-line="101" selection-start-column="55" selection-end-line="101" selection-end-column="80" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#744#745#0" expanded="false" />
+            <element signature="e#766#767#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1270,7 +1412,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1278,7 +1419,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#449#450#0" expanded="false" />
+            <element signature="e#489#490#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1286,7 +1431,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1294,7 +1438,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="70" column="25" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1302,26 +1445,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/PropertiesException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Settings.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.5172415">
           <caret line="6" column="89" selection-start-line="6" selection-start-column="89" selection-end-line="6" selection-end-column="89" />
-          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/util/function/Function.java">
@@ -1337,81 +1471,29 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/MainForm.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Clazz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Club.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Course.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Manufacturer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Track.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/CarDetail.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/CarDetail.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1423,24 +1505,6 @@
             <element signature="e#552#553#0" expanded="false" />
             <element signature="e#579#580#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Lap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="e#693#694#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Car.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="229" column="0" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1469,7 +1533,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1477,7 +1540,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1485,7 +1547,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="70" column="25" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1503,31 +1564,138 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/SettingsView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="59" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/netty-socketio-1.7.7.jar!/com/corundumstudio/socketio/SocketIOServer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="139" column="16" selection-start-line="139" selection-start-column="16" selection-end-line="139" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/PropertiesException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#449#450#0" expanded="false" />
+            <element signature="e#489#490#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/MyLapsDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="9" selection-start-line="30" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/artifacts/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/Decoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Readers/SerialReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="190" column="30" selection-start-line="190" selection-start-column="30" selection-end-line="190" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#6194#6195#0" expanded="false" />
+            <element signature="e#6253#6254#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Clazz.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Club.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+          <folding>
+            <element signature="e#1006#1007#0" expanded="false" />
+            <element signature="e#1048#1049#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Manufacturer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Track.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#374#375#0" expanded="false" />
+            <element signature="e#401#402#0" expanded="false" />
+            <element signature="e#441#442#0" expanded="false" />
+            <element signature="e#473#474#0" expanded="false" />
+            <element signature="e#506#507#0" expanded="false" />
+            <element signature="e#535#536#0" expanded="false" />
+            <element signature="e#579#580#0" expanded="false" />
+            <element signature="e#615#616#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxProperties.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="105" column="55" selection-start-line="105" selection-start-column="55" selection-end-line="105" selection-end-column="55" />
-          <caret line="104" column="55" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
-          <caret line="103" column="55" selection-start-line="103" selection-start-column="55" selection-end-line="103" selection-end-column="55" />
-          <caret line="102" column="55" selection-start-line="102" selection-start-column="55" selection-end-line="102" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/SerialTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="65" selection-start-line="14" selection-start-column="65" selection-end-line="14" selection-end-column="65" />
+          <caret line="122" column="9" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#744#745#0" expanded="false" />
+            <element signature="e#766#767#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1540,78 +1708,118 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Readers/SerialReader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/NameChangedListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="50" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="50" />
+          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Lap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#720#721#0" expanded="true" />
+            <element signature="e#762#763#0" expanded="true" />
+            <element signature="e#868#869#0" expanded="true" />
+            <element signature="e#904#905#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/Decoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/MyLapsDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="73" selection-start-line="50" selection-start-column="73" selection-end-line="50" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/Decoder/RobiDecoder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/MainForm.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/SerialTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+          <caret line="51" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/SettingsView.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_79/src.zip!/java/util/HashSet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="59" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
-          <folding />
+          <caret line="215" column="19" selection-start-line="215" selection-start-column="19" selection-end-line="215" selection-end-column="19" />
+          <folding>
+            <element signature="e#7993#7994#0" expanded="true" />
+            <element signature="e#8041#8042#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/config.properties">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/util/function/Predicate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/netty-socketio-1.7.7.jar!/com/corundumstudio/socketio/SocketIOServer.class">
+    <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Car.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.333333">
-          <caret line="139" column="16" selection-start-line="139" selection-start-column="16" selection-end-line="139" selection-end-column="16" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="183" column="9" selection-start-line="183" selection-start-column="9" selection-end-line="183" selection-end-column="9" />
+          <folding>
+            <element signature="e#1120#1121#0" expanded="true" />
+            <element signature="e#1148#1149#0" expanded="true" />
+            <element signature="e#1189#1190#0" expanded="true" />
+            <element signature="e#1223#1224#0" expanded="true" />
+            <element signature="e#1740#1741#0" expanded="true" />
+            <element signature="e#1784#1785#0" expanded="true" />
+            <element signature="e#2848#2849#0" expanded="true" />
+            <element signature="e#2895#2896#0" expanded="true" />
+            <element signature="e#4054#4055#0" expanded="true" />
+            <element signature="e#4081#4082#0" expanded="true" />
+            <element signature="e#4116#4117#0" expanded="true" />
+            <element signature="e#4145#4146#0" expanded="true" />
+            <element signature="e#4535#4536#0" expanded="true" />
+            <element signature="e#4579#4580#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/AxServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35540542">
-          <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="272" column="9" selection-start-line="272" selection-start-column="9" selection-end-line="272" selection-end-column="9" />
           <folding>
             <element signature="method#initZeroNetConf#0;class#AxServer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AxPersistancy/src/Shared/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+          <folding>
+            <element signature="e#687#688#0" expanded="true" />
+            <element signature="e#714#715#0" expanded="true" />
+            <element signature="e#1121#1122#0" expanded="true" />
+            <element signature="e#1150#1151#0" expanded="true" />
+            <element signature="e#1267#1268#0" expanded="true" />
+            <element signature="e#1294#1295#0" expanded="true" />
+            <element signature="e#1414#1415#0" expanded="true" />
+            <element signature="e#1461#1462#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/eu/isawsm/accelerate/server/UI/MainForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.991228">
+          <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

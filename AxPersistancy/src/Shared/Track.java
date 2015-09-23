@@ -1,10 +1,12 @@
 package Shared;
 
+import java.io.Serializable;
+
 /**
  * Represents a Track
  * Created by Awli on 29.01.2015.
  */
-public class Track {
+public class Track implements Serializable {
     private String type;
     private Course course;
 

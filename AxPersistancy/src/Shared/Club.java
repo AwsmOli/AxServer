@@ -2,6 +2,7 @@ package Shared;
 
 import android.graphics.Bitmap;
 
+import java.io.Serializable;
 import java.net.URI;
 import java.util.List;
 
@@ -9,7 +10,7 @@ import java.util.List;
  * Represents a Club
  * Created by Awli on 31.01.2015.
  */
-public class Club  {
+public class Club implements Serializable {
     private String name;
     private URI url;
     private Bitmap image;

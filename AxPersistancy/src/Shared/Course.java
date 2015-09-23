@@ -1,10 +1,12 @@
 package Shared;
 
+import java.io.Serializable;
+
 /**
  * Represents a Course
  * Created by Awli on 31.01.2015.
  */
-public class Course  {
+public class Course implements Serializable {
     private String condition;
     private String name;
     private boolean inReverse;

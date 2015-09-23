@@ -10,7 +10,6 @@ import eu.isawsm.accelerate.server.Readers.SerialReader;
 import eu.isawsm.accelerate.server.UI.MainForm;
 import eu.isawsm.accelerate.server.UI.SettingsView;
 import gnu.io.UnsupportedCommOperationException;
-import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,12 +18,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import org.json.JSONException;
 
 import javax.jmdns.JmmDNS;
 import javax.jmdns.ServiceInfo;
-import java.io.IOException;
+import java.io.*;
 import java.net.BindException;
+import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -37,7 +36,8 @@ public class AxServer {
     private MainForm mainForm;
     private SocketIOServer mServer;
 
-    private static final ObservableList<Car> cars = FXCollections.observableArrayList();
+    private static final ObservableList<Driver> drivers = load();
+
 
     private JmmDNS jmDNS = JmmDNS.Factory.getInstance();
     private Stage primaryStage;
@@ -80,7 +80,11 @@ public class AxServer {
             mainForm.setPrimaryStage(primaryStage);
             mainForm.setProperties(axProperties);
 
-            mainForm.setCars(cars);
+            mainForm.setDrivers(drivers);
+            mainForm.addNameChangedListener((car, newName) -> {
+
+            });
+
             primaryStage.show();
         }catch (IOException e) {
             e.printStackTrace();
@@ -109,17 +113,45 @@ public class AxServer {
     }
 
 
+    private Driver findDriver(Driver driver){
+        for(Driver d : drivers){
+            for(Car c : d.getCars()){
+                for(Car c2 : driver.getCars()){
+                    if(c.equals(c2)){
+                        return d;
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
     private void startSocketServer() {
         Configuration config = new Configuration();
         config.setPort(axProperties.PORT);
 
         try{
             SocketIOServer server = new SocketIOServer(config);
-            server.addEventListener("registerDriver", Driver.class, (socketIOClient, driver, ackRequest) -> {
-                System.out.println("Driver registered: " + driver.getName());
-                for (Car car : driver.getCars()) {
-                    System.out.println(" -" + car.getName());
-                }
+            server.addEventListener("registerDriver", String.class, (socketIOClient, driverJson, ackRequest) -> {
+                Driver remoteDriver = new Gson().fromJson(driverJson, Driver.class);
+                System.out.println("Driver registered: " + remoteDriver.getName());
+                Driver localDriver = findDriver(remoteDriver);
+
+                if(localDriver != null){
+                        for(Car remoteCar : remoteDriver.getCars()) {
+                            if(!localDriver.getCars().add(remoteCar)) {
+                                Car localCar = localDriver.getCar(remoteCar.getTransponderID());
+                                localCar.merge(remoteCar);
+                            }
+                        }
+
+                    localDriver.setName(remoteDriver.getName());
+                    localDriver.setImage(remoteDriver.getImage());
+                    localDriver.setMail(remoteDriver.getMail());
+
+                    socketIOClient.sendEvent("driverMerged", localDriver);
+                } else
+                    drivers.add(remoteDriver);
             });
 
             server.addEventListener("TestConnection", String.class, (socketIOClient, s, ackRequest) -> {
@@ -127,11 +159,11 @@ public class AxServer {
                 socketIOClient.sendEvent("Welcome", axProperties.club);
             });
 
-            server.addConnectListener(socketIOClient -> {
-                System.out.println("Client connected: " + socketIOClient.getRemoteAddress());
-
-                socketIOClient.sendEvent("Welcome", axProperties.club);
-            });
+//            server.addConnectListener(socketIOClient -> {
+//                System.out.println("Client connected: " + socketIOClient.getRemoteAddress());
+//
+//                socketIOClient.sendEvent("Welcome", axProperties.club);
+//            });
 
             server.start();
             mServer = server;
@@ -150,15 +182,13 @@ public class AxServer {
     private void startSerialReader() {
         //This should not be static
         try {
-            serialReader = new SerialReader(axProperties.COMPORT, data -> {
-                try {
-                    Passing passing = axProperties.decoder.decode(data);
-                    if (passing != null)
-                        processLaps(passing);
-                } catch (JSONException e) {
-                    e.printStackTrace();
+            serialReader = new SerialReader(axProperties.COMPORT, axProperties.decoder, axProperties.serialSpeed, axProperties.serialDataBits, axProperties.serialStopBits, axProperties.serialParity);
+            serialReader.addPassingListener(new PassingListener() {
+                @Override
+                public void onPaassing(Passing passing) {
+                    processLaps(passing);
                 }
-            }, axProperties.serialSpeed, axProperties.serialDataBits, axProperties.serialStopBits, axProperties.serialParity);
+            });
         } catch (UnsupportedCommOperationException e) {
             e.printStackTrace();
         }
@@ -226,17 +256,20 @@ public class AxServer {
 
 
         //Search the car that just passed the line
-        for (Car c : cars) {
-            if (c.getTransponderID() == passing.getTransponderID()) {
-                car = c;
+        for(Driver d : drivers) {
+            for (Car c : d.getCars()) {
+                if (c.getTransponderID() == passing.getTransponderID()) {
+                    car = c;
+                }
             }
         }
-
 
         //If its not already there create it
         if(car == null){
             car = new Car(null,null,passing.getTransponderID(),null);
-            cars.add(car);
+            Driver d = new Driver();
+            d.addCar(car);
+            drivers.add(d);
         }
 
         //If it has no currentlap going on set it in a new Current lap with the passing time
@@ -256,5 +289,46 @@ public class AxServer {
         final Car finalCar = car;
         Platform.runLater(() -> mainForm.updateCars(finalCar));
 
+        store(drivers);
+
+    }
+
+    private void store(ObservableList<Driver> drivers) {
+        try {
+            FileOutputStream fileOut = new FileOutputStream("cars.ser");
+            ObjectOutputStream out = null;
+
+            out = new ObjectOutputStream(fileOut);
+
+            out.writeObject(drivers.toArray());
+            out.close();
+            fileOut.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static ObservableList<Driver> load(){
+        ObservableList<Driver> retVal = FXCollections.observableArrayList();
+        try {
+            FileInputStream fileIn = new FileInputStream("cars.ser");
+            ObjectInputStream in = null;
+
+            in = new ObjectInputStream(fileIn);
+
+            Object[] drivers = (Object[]) in.readObject();
+
+            in.close();
+            fileIn.close();
+            for(Object o : drivers){
+                retVal.add((Driver)o);
+            }
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("No saves found creating new file...");
+        }
+        return retVal;
     }
 }

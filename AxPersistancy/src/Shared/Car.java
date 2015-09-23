@@ -2,31 +2,32 @@ package Shared;
 
 import android.graphics.Bitmap;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.ConcurrentSkipListSet;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Represents a RC-Car
  * Created by Awli on 29.01.2015.
  */
-public class Car {
+public class Car implements Serializable {
 
     private static final int MINLAPS = 10;
     private Model Model;
     private Clazz Clazz;
     private long transponderID;
     private Bitmap picture;
-    private List<Lap> Laps;
+    private ConcurrentSkipListSet<Lap> Laps;
 
     public Car(Model Model, Clazz Clazz, long transponderID, Bitmap picture) {
         this.Model =  Model;
         this.Clazz =  Clazz;
         this.transponderID = transponderID;
         this.picture = picture;
-        Laps = new ArrayList<Lap>();
+        Laps = new ConcurrentSkipListSet<>();
     }
 
     private static double median(double[] m) {
@@ -76,7 +77,7 @@ public class Car {
     }
 
     public double getAvgTime(Course course, int count) {
-        ArrayList<Lap> Laps = count==0 ? getLapsCopy(): getLapsCopy(200);
+        List<Lap> Laps = count==0 ? getLapsCopy(): getLapsCopy(200);
 
         if (Laps.isEmpty()) return 0.0;
 
@@ -89,12 +90,13 @@ public class Car {
     }
 
     public double getBestTime(Course course) {
-        ArrayList<Lap> Laps = getLapsCopy();
+
+        List<Lap> Laps = getLapsCopy();
 
 
 
         if (Laps.isEmpty()) return 0;
-        long bestTime = Laps.get(0).getTime();
+        long bestTime = ((Lap)Laps.toArray()[0]).getTime();
 
         for (Lap l : Laps) {
             if(l.getCourse().equals(course))
@@ -107,7 +109,7 @@ public class Car {
     }
 
     public int getLapCount(Course course) {
-        ArrayList<Lap> Laps = getLapsCopy();
+        List<Lap> Laps = getLapsCopy();
 
         int retVal = 0;
 
@@ -126,7 +128,7 @@ public class Car {
 
         if (getLapCount(course) < MINLAPS) return -1;
 
-        ArrayList<Lap> Laps = count==0 ? getLapsCopy(): getLapsCopy(200);
+        List<Lap> Laps = count==0 ? getLapsCopy(): getLapsCopy(200);
 
         double[] times = new double[Laps.size()];
         int i = 0;
@@ -164,7 +166,7 @@ public class Car {
         return 0;
     }
 
-    public List<Lap> getLaps() {
+    public ConcurrentSkipListSet<Lap> getLaps() {
         return Laps;
     }
 
@@ -174,20 +176,27 @@ public class Car {
 
     public String getName() {
         String retVal = "";
-        retVal += getModel().getManufacturer().getName();
-        retVal += " "+getModel().getName();
+        if (getModel() != null && getModel().getManufacturer() != null) {
+            retVal += getModel().getManufacturer().getName();
+            retVal += " "+getModel().getName();
+        } else {
+            return getTransponderID() + "";
+        }
+
         return retVal.trim();
     }
 
-    private ArrayList<Lap> getLapsCopy (){
-        return new ArrayList<Lap>(Laps);
+    private List<Lap> getLapsCopy (){
+        return new ArrayList<>(Laps);
     }
 
-    private ArrayList<Lap> getLapsCopy (int count){
-        if(Laps.size() > count){
-            return new ArrayList<Lap>(Laps.subList(Laps.size()-count-1,Laps.size()-1));
-        }
-        return getLapsCopy();
+    private List<Lap> getLapsCopy(int count){
+
+            if(Laps.size() > count){
+                return new ArrayList<>(Laps).subList(Laps.size()-count-1,Laps.size()-1);
+            }
+            return getLapsCopy();
+
     }
 
     public boolean equals(Object o) {
@@ -225,5 +234,20 @@ public class Car {
         addLap(finishedLap);
         setCurrentLap(new Lap(time, getCurrentLap().getCourse()));
         return finishedLap;
+    }
+
+    public Car merge(Car c2) {
+        if(c2.getModel() != null){
+            setModel(c2.getModel());
+        }
+        if(c2.getClazz() != null){
+            setClazz(c2.getClazz());
+        }
+        if(c2.getName() != null){
+            setClazz(c2.getClazz());
+        }
+       getLaps().addAll(c2.getLaps());
+
+        return this;
     }
 }
